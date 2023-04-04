@@ -1,0 +1,7 @@
+import { render } from "@testing-library/react"
+import {{pascalCase name}} from "./{{pascalCase name}}"
+
+test("renders", () => {
+  const { getByTestId } = render(<{{pascalCase name}} data-testid="{{dashCase name}}" />)
+  expect(getByTestId("{{dashCase name}}")).toBeDefined()
+})

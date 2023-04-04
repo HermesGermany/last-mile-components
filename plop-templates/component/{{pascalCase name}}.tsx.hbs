@@ -1,0 +1,11 @@
+import { HTMLAttributes } from "react"
+
+export type Props = HTMLAttributes<HTMLDivElement> & {
+  // Placeholder
+}
+
+export function {{pascalCase name}}({ ...htmlProps }: Props) {
+  return <div {...htmlProps}>{{pascalCase name}}</div>
+}
+
+export default {{pascalCase name}}
