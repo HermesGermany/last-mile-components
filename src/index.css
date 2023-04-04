@@ -18,9 +18,22 @@
   -webkit-text-size-adjust: 100%;
 
   --hermes-blue: #0091cd;
-  --hermes-lightblue: #cce9f5;
+  --hermes-blue-light: #cce9f5;
   --hermes-orange: #e9530e;
   --hermes-orange-hover: #ba420c;
+  --hermes-blue-hover: #006d9a;
+  --hermes-signal-green: #6ea528;
+  --hermes-signal-green-light: #d3e4be;
+  --hermes-signal-yellow: #e6aa00;
+  --hermes-signal-yellow-light: #faeecc;
+  --hermes-signal-red: #c30005;
+  --hermes-signal-red-light: #f3cccd;
+  --hermes-grey-50: #9d9da0;
+  --hermes-grey-30: #c4c4c6;
+  --hermes-grey-10: #ebebec;
+  --hermes-grey-5: #f5f5f6;
+  --hermes-grey: #3c3c41;
+  --hermes-grey-light: #e2e2e3;
 }
 
 a {
