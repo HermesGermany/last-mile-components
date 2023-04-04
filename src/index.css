@@ -16,6 +16,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --hermes-blue: #0091cd;
+  --hermes-lightblue: #cce9f5;
+  --hermes-orange: #e9530e;
+  --hermes-orange-hover: #ba420c;
 }
 
 a {
