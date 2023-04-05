@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "./dist/lmc.umd.js",
+  "module": "./dist/lmc.es.js",
+  "types": "./dist/lmc.es.d.ts",
   "scripts": {
     "dev": "npm run storybook",
     "build": "tsc && vite build",
