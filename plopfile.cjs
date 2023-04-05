@@ -8,7 +8,7 @@ module.exports = (plop) => {
   plop.setActionType("format", (answers, config) => {
     const folderPath = `${path.join(
       config.path,
-      plop.getHelper("dashCase")(`${answers.name}${config.suffix}`),
+      plop.getHelper("pascalCase")(`${answers.name}${config.suffix}`),
       "**",
       "**.{ts,tsx}"
     )}`
