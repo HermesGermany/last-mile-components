@@ -1,5 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
 
+import Icon from "./Icon"
+
 import SidebarPopupEntry from "./SidebarPopupEntry"
 
 export default {
@@ -13,7 +15,7 @@ const Template: ComponentStory<typeof SidebarPopupEntry> = (args) => <SidebarPop
 export const TitleAndIcon = Template.bind({})
 TitleAndIcon.args = {
   buttonTitle: "Title",
-  buttonIcon: <>x</>,
+  buttonIcon: <Icon />,
   popupTitle: "Popup Title",
   children: <div>1</div>,
 }
@@ -27,7 +29,7 @@ TitleOnly.args = {
 
 export const IconOnly = Template.bind({})
 IconOnly.args = {
-  buttonTitle: "x",
+  buttonIcon: <Icon />,
   popupTitle: "Basic Popup",
   children: <div>1</div>,
 }

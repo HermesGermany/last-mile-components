@@ -1,12 +1,13 @@
-import { useCallback, useState } from "react"
+import { HTMLAttributes, useCallback, useState } from "react"
 
 import { Popup } from "../Popup"
 
-export type Props = {
+export type Props = HTMLAttributes<HTMLButtonElement> & {
   buttonTitle?: string
   buttonIcon?: React.ReactNode
   popupTitle?: string
   children?: React.ReactNode
+  className?: string
 }
 
 function SidebarPopupEntry({
@@ -14,7 +15,8 @@ function SidebarPopupEntry({
   popupTitle,
   buttonIcon: icon,
   children,
-  ...rest
+  className,
+  ...htmlProps
 }: Props) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -35,12 +37,12 @@ function SidebarPopupEntry({
   }, [])
 
   return (
-    <div className={`relative flex w-full items-center justify-center`} onBlur={handleBlur}>
+    <div className={`relative flex w-14 items-center justify-center`} onBlur={handleBlur}>
       <button
-        className={`m-1 flex h-12 w-14 flex-col items-center justify-center rounded p-2 text-[10px] font-bold text-white hover:bg-white hover:bg-opacity-10 `}
+        className={`m-1 flex w-14 flex-col items-center justify-center rounded p-2 text-[10px] font-bold text-white hover:bg-white hover:bg-opacity-10 ${className}`}
         onClick={toggleOpenMenu}
         data-testid="linked-apps-btn"
-        {...rest}
+        {...htmlProps}
       >
         {icon}
         <span>{buttonTitle}</span>
