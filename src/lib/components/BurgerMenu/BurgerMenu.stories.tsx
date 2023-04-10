@@ -15,3 +15,19 @@ const Template: ComponentStory<typeof BurgerMenu> = (args) => <BurgerMenu {...ar
 export const Basic = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Basic.args = {}
+
+export const WithSomeItems = Template.bind({})
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+WithSomeItems.args = {
+  menuItems: [
+    { content: "hello" },
+    {
+      content: (
+        <div className="flex justify-between">
+          <div>Useraccount</div>
+          <div>hi</div>
+        </div>
+      ),
+    },
+  ],
+}
