@@ -10,7 +10,9 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof SidebarPopupEntry>
 
-const Template: ComponentStory<typeof SidebarPopupEntry> = (args) => <SidebarPopupEntry {...args} />
+const Template: ComponentStory<typeof SidebarPopupEntry> = (args) => (
+  <SidebarPopupEntry {...args} />
+)
 
 export const TitleAndIcon = Template.bind({})
 TitleAndIcon.args = {

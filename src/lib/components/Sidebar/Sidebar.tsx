@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { HTMLAttributes } from "react"
-import MenuIcon from "./MenuIcon"
+import { SidebarPopupEntry } from "../SidebarPopupEntry"
 
 export type Props = HTMLAttributes<HTMLDivElement> & {
   imgSrc?: string
@@ -38,7 +38,7 @@ export function Sidebar({ imgSrc, imgTitle, ...htmlProps }: Props) {
         </div>
       </div>
       <div>
-        <MenuIcon />
+        <SidebarPopupEntry />
       </div>
     </div>
   )

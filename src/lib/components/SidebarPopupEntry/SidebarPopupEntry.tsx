@@ -1,6 +1,7 @@
 import { HTMLAttributes, useCallback, useState } from "react"
 
 import { Popup } from "../Popup"
+import { SidebarEntry } from "../SidebarEntry"
 
 export type Props = HTMLAttributes<HTMLButtonElement> & {
   buttonTitle?: string
@@ -15,7 +16,6 @@ function SidebarPopupEntry({
   popupTitle,
   buttonIcon: icon,
   children,
-  className,
   ...htmlProps
 }: Props) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -37,17 +37,19 @@ function SidebarPopupEntry({
   }, [])
 
   return (
-    <div className={`relative flex w-14 items-center justify-center`} onBlur={handleBlur}>
-      <button
-        className={`m-1 flex w-14 flex-col items-center justify-center rounded p-2 text-[10px] font-bold text-white hover:bg-white hover:bg-opacity-10 ${className}`}
+    <div
+      className={`relative flex w-full items-center justify-center`}
+      onBlur={handleBlur}
+    >
+      <SidebarEntry
         onClick={toggleOpenMenu}
+        icon={icon}
         data-testid="linked-apps-btn"
+        title={buttonTitle}
         {...htmlProps}
       >
-        {icon}
-        <span>{buttonTitle}</span>
-      </button>
-      {isMenuOpen && <Popup title={popupTitle}>{children}</Popup>}
+        {isMenuOpen && <Popup title={popupTitle}>{children}</Popup>}
+      </SidebarEntry>
     </div>
   )
 }
