@@ -11,7 +11,9 @@ export default {
 } as ComponentMeta<typeof SidebarPopupEntry>
 
 const Template: ComponentStory<typeof SidebarPopupEntry> = (args) => (
-  <SidebarPopupEntry {...args} />
+  <div className="w-16">
+    <SidebarPopupEntry {...args} />
+  </div>
 )
 
 export const TitleAndIcon = Template.bind({})

@@ -1,4 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
+import { SidebarEntry } from "../SidebarEntry"
+import CarIcon from "./CarIcon"
 import Sidebar from "./Sidebar"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -17,4 +19,21 @@ export const Basic = Template.bind({})
 Basic.args = {
   title: "Test",
   imgSrc: "https://placehold.jp/150x150.png",
+}
+
+export const WithLinks = Template.bind({})
+
+WithLinks.args = {
+  title: "Logo",
+  imgSrc: "https://placehold.jp/75x75.png",
+  children: (
+    <>
+      <SidebarEntry label="Dispo" onClick={() => alert("Clicked!")} />
+      <SidebarEntry
+        label="Touren"
+        icon={<CarIcon />}
+        onClick={() => alert("Clicked!")}
+      />
+    </>
+  ),
 }

@@ -1,29 +1,30 @@
 import { HTMLAttributes, MouseEventHandler } from "react"
-import MenuIcon from "../Sidebar/MenuIcon"
 
 export type Props = HTMLAttributes<HTMLButtonElement> & {
   onClick: MouseEventHandler<HTMLButtonElement>
   icon?: React.ReactNode
-  title?: string
+  label?: string
 }
 
 export function SidebarEntry({
   className,
   onClick,
-  icon = <MenuIcon />,
-  title,
+  icon,
+  label,
   children,
   ...htmlProps
 }: Props) {
   return (
     <>
       <button
-        className={`flex w-full flex-col items-center justify-center rounded p-2 text-[10px] font-bold text-white hover:bg-white hover:bg-opacity-10 ${className}`}
+        className={`flex w-full flex-col items-center justify-around rounded pb-1 text-[10px] font-bold text-white hover:bg-white hover:bg-opacity-10 ${
+          icon ? "aspect-square" : "py-2"
+        } ${className}`}
         onClick={onClick}
         {...htmlProps}
       >
-        <div className="w-1/2">{icon}</div>
-        <span>{title}</span>
+        {icon && <div className="w-6/12 pt-2">{icon}</div>}
+        {label && <span className="text-hermes-grey-light">{label}</span>}
       </button>
       {children}
     </>

@@ -44,6 +44,7 @@ function SidebarPopupEntry({
       <SidebarEntry
         onClick={toggleOpenMenu}
         icon={icon}
+        label={buttonTitle}
         data-testid="linked-apps-btn"
         title={buttonTitle}
         {...htmlProps}

@@ -20,14 +20,14 @@ function LogoImage(
   )
 }
 
-export function Sidebar({ imgSrc, imgTitle, ...htmlProps }: Props) {
+export function Sidebar({ imgSrc, imgTitle, children, ...htmlProps }: Props) {
   return (
     <div
-      className="fixed left-0 top-0 flex h-full w-16 flex-col justify-between bg-hermes-blue p-2"
+      className="fixed left-0 top-0 flex h-full w-16 flex-col justify-between bg-hermes-blue"
       {...htmlProps}
     >
       <div className="relative">
-        <div className="aspect-square">
+        <div className="mb-2 aspect-square">
           {imgSrc ? (
             <LogoImage src={imgSrc} title={imgTitle} alt={imgTitle} />
           ) : (
@@ -36,8 +36,9 @@ export function Sidebar({ imgSrc, imgTitle, ...htmlProps }: Props) {
             </div>
           )}
         </div>
+        <div className="flex flex-col gap-1 p-1.5">{children}</div>
       </div>
-      <div>
+      <div className="">
         <SidebarPopupEntry />
       </div>
     </div>

@@ -12,19 +12,21 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof SidebarEntry> = (args) => (
-  <SidebarEntry {...args} />
+  <div className="w-16">
+    <SidebarEntry {...args} />
+  </div>
 )
 
 export const TitleAndIcon = Template.bind({})
 TitleAndIcon.args = {
-  title: "Title",
+  label: "Title",
   icon: <MenuIcon />,
   onClick: () => console.log("Tets"),
 }
 
 export const TitleOnly = Template.bind({})
 TitleOnly.args = {
-  title: "Title",
+  label: "Title",
 }
 
 export const IconOnly = Template.bind({})
