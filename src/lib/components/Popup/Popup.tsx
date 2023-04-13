@@ -1,10 +1,51 @@
-import { HTMLAttributes } from "react"
+import { HTMLAttributes, ReactNode } from "react"
+
+function MenuGroup({
+  groupLabel,
+  children,
+}: {
+  groupLabel?: string
+  children: ReactNode
+}) {
+  return (
+    <div
+      key={groupLabel}
+      className="flex flex-col gap-0.5 border-b-2 border-b-hermes-grey-10 pb-1 last:border-b-0"
+    >
+      {groupLabel && (
+        <div className="mb-1 px-5 text-xs font-medium text-hermes-grey-50">
+          {groupLabel}
+        </div>
+      )}
+      {children}
+    </div>
+  )
+}
+
+type ItemProps = {
+  label: string
+  action: () => void
+  children?: React.ReactNode
+}
+
+function MenuItem({ label, action, children, ...rest }: ItemProps) {
+  return (
+    <button
+      key={label}
+      onClick={action}
+      className="relative flex h-8 items-center justify-between border-none bg-none px-5 text-start text-sm hover:bg-hermes-grey-10"
+      {...rest}
+    >
+      <span>{label}</span>
+      {children}
+    </button>
+  )
+}
 
 export type Props = HTMLAttributes<HTMLDivElement> & {
   title?: string
   children?: React.ReactNode
 }
-
 export function Popup({
   title,
   children,
@@ -23,9 +64,12 @@ export function Popup({
           {title}
         </span>
       )}
-      <div className="flex flex-col">{children}</div>
+      <div className="flex flex-col gap-2">{children}</div>
     </div>
   )
 }
+
+Popup.MenuGroup = MenuGroup
+Popup.MenuItem = MenuItem
 
 export default Popup

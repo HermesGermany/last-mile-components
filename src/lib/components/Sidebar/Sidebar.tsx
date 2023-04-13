@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { HTMLAttributes } from "react"
-import { SidebarPopupEntry } from "../SidebarPopupEntry"
+import { HTMLAttributes, ReactNode } from "react"
 
 export type Props = HTMLAttributes<HTMLDivElement> & {
   imgSrc?: string
   imgTitle: string
+  footer?: ReactNode
 }
 
 function LogoImage(
@@ -20,7 +20,13 @@ function LogoImage(
   )
 }
 
-export function Sidebar({ imgSrc, imgTitle, children, ...htmlProps }: Props) {
+export function Sidebar({
+  imgSrc,
+  imgTitle,
+  children,
+  footer,
+  ...htmlProps
+}: Props) {
   return (
     <div
       className="fixed left-0 top-0 flex h-full w-16 flex-col justify-between bg-hermes-blue"
@@ -38,9 +44,7 @@ export function Sidebar({ imgSrc, imgTitle, children, ...htmlProps }: Props) {
         </div>
         <div className="flex flex-col gap-1 p-1.5">{children}</div>
       </div>
-      <div className="">
-        <SidebarPopupEntry />
-      </div>
+      <div className="">{footer}</div>
     </div>
   )
 }
