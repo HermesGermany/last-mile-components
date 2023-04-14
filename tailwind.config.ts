@@ -1,6 +1,4 @@
-import { Config } from "tailwindcss"
-
-const twConfig: Config = {
+const twConfig = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {

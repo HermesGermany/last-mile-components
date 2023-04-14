@@ -36,10 +36,17 @@ type CustomPosition = {
   }
 }
 
-export type Props = HTMLAttributes<HTMLDivElement> & BaseProps & (GivenPosition | CustomPosition)
+export type Props = HTMLAttributes<HTMLDivElement> &
+  BaseProps &
+  (GivenPosition | CustomPosition)
 
 export function NotificationDot(props: Props) {
-  const { description, position = "topRight", color = "hermes-orange", ...htmlProps } = props
+  const {
+    description,
+    position = "topRight",
+    color = "hermes-orange",
+    ...htmlProps
+  } = props
   let newPosition
 
   if ("customPosition" in props) {
