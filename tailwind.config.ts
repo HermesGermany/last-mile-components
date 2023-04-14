@@ -1,15 +1,15 @@
 import { Config } from "tailwindcss"
 
 const twConfig: Config = {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
         "hermes-blue": "var(--hermes-blue)",
+        "hermes-blue-hover": "var(--hermes-blue-hover)",
         "hermes-lightblue": "var(--hermes-lightblue)",
         "hermes-orange": "var(--hermes-orange)",
         "hermes-orange-hover": "var(--hermes-orange-hover)",
-        "hermes-blue-hover": "var(--hermes-blue-hover)",
         "hermes-signal-green": "var(--hermes-signal-green)",
         "hermes-signal-green-light": "var(--hermes-signal-green-light)",
         "hermes-signal-yellow": "var(--hermes-signal-yellow)",
