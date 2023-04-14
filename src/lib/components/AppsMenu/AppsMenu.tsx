@@ -1,18 +1,27 @@
-import { Menu } from "@headlessui/react"
 import { HTMLAttributes } from "react"
-import { SidebarMenuButton } from "../SidebarMenuButton"
+
+import SidebarButton from "../../../components/SidebarButton"
+import { Popover } from "../Popover"
 import AppsIcon from "./AppsIcon"
 
 export type Props = HTMLAttributes<HTMLDivElement> & {
   // Placeholder
 }
 
-export function AppsMenu({ ...htmlProps }: Props) {
+export function AppsMenu(props: Props) {
   return (
-    <Menu {...htmlProps} className="relative w-fit" as="div">
-      <SidebarMenuButton title="Apps" icon={<AppsIcon />} />
-      {/* <SidebarMenu menuItems={menuItems} /> */}
-    </Menu>
+    <Popover
+      {...props}
+      button={
+        <SidebarButton
+          label="Apps"
+          icon={<AppsIcon />}
+          ButtonComponent={Popover.Button}
+        />
+      }
+    >
+      hi
+    </Popover>
   )
 }
 

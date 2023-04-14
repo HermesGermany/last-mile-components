@@ -1,9 +1,11 @@
 import { Meta, StoryFn } from "@storybook/react"
-import { Popup } from "../Popup"
+
+import { AppsMenu } from "../AppsMenu"
+
 import { SidebarEntry } from "../SidebarEntry"
-import { SidebarPopupEntry } from "../SidebarPopupEntry"
+
 import CarIcon from "./CarIcon"
-import MenuIcon from "./MenuIcon"
+
 import Sidebar from "./Sidebar"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -41,28 +43,7 @@ FullExample.args = {
   ),
   footer: (
     <div className="p-2">
-      <SidebarPopupEntry buttonIcon={<MenuIcon />}>
-        <Popup.MenuGroup groupLabel="Test">
-          <Popup.MenuItem
-            action={() => console.log("Clicked menu item")}
-            label="Label A"
-          />
-          <Popup.MenuItem
-            action={() => console.log("Clicked menu item")}
-            label="Option B"
-          />
-          <Popup.MenuItem
-            action={() => console.log("Clicked menu item")}
-            label="Entry C"
-          />
-        </Popup.MenuGroup>
-        <Popup.MenuGroup groupLabel="Group 2">
-          <Popup.MenuItem
-            action={() => console.log("Clicked menu item")}
-            label="mailto:max.m@muster.de"
-          />
-        </Popup.MenuGroup>
-      </SidebarPopupEntry>
+      <AppsMenu />
     </div>
   ),
 }
