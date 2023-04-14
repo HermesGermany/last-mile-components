@@ -15,7 +15,7 @@
     "test": "vitest",
     "generate": "plop",
     "prepare": "husky install",
-    "lint": "eslint",
+    "lint": "eslint \"src/**/*.ts\" \"src/**/*.tsx\"",
     "format": "prettier --write"
   },
   "dependencies": {

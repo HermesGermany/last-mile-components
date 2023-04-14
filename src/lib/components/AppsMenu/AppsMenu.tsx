@@ -1,5 +1,4 @@
 import { HTMLAttributes } from "react"
-
 import SidebarButton from "../../../components/SidebarButton"
 import { Popover } from "../Popover"
 import AppsIcon from "./AppsIcon"
@@ -15,6 +14,7 @@ export function AppsMenu(props: Props) {
       button={
         <SidebarButton
           label="Apps"
+          test
           icon={<AppsIcon />}
           ButtonComponent={Popover.Button}
         />
