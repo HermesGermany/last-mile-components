@@ -14,7 +14,6 @@ export function AppsMenu(props: Props) {
       button={
         <SidebarButton
           label="Apps"
-          test
           icon={<AppsIcon />}
           ButtonComponent={Popover.Button}
         />
