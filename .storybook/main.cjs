@@ -4,11 +4,20 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    "@storybook/addon-postcss",
+    {
+      name: "@storybook/addon-styling",
+      options: {
+        postCss: {
+          implementation: require("postcss"),
+        },
+      },
+    },
   ],
-  framework: "@storybook/react",
+  framework: {
+    name: "@storybook/react-vite",
+    options: {},
+  },
   core: {
-    builder: "@storybook/builder-vite",
     disableTelemetry: true,
   },
   features: {
