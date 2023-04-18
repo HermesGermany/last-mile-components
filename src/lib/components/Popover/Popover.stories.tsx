@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react"
+import { Meta, StoryFn } from "@storybook/react"
 import AppsIcon from "../AppsMenu/AppsIcon"
 import Popover from "./Popover"
 
@@ -8,10 +8,10 @@ export default {
   component: Popover,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
-} as ComponentMeta<typeof Popover>
+} as Meta<typeof Popover>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Popover> = (args) => (
+const Template: StoryFn<typeof Popover> = (args) => (
   <div className="w-16">
     <Popover {...args} />
   </div>
