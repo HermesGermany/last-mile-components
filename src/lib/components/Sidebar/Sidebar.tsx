@@ -44,7 +44,7 @@ export function Sidebar({
         </div>
         <div className="flex flex-col gap-1 p-1.5">{children}</div>
       </div>
-      <div className="">{footer}</div>
+      <div className="flex flex-col gap-1 p-1.5">{footer}</div>
     </div>
   )
 }

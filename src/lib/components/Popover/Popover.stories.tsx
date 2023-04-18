@@ -13,7 +13,9 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Popover> = (args) => (
   <div className="flex h-screen w-full items-center justify-center">
-    <Popover {...args} />
+    <div className="w-14">
+      <Popover {...args} />
+    </div>
   </div>
 )
 

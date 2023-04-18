@@ -1,5 +1,4 @@
 import { HTMLAttributes } from "react"
-import SidebarButton from "../../../components/SidebarButton"
 import { Popover } from "../Popover"
 import AppsIcon from "./AppsIcon"
 
@@ -7,19 +6,10 @@ export type Props = HTMLAttributes<HTMLDivElement> & {
   // Placeholder
 }
 
-export function AppsMenu(props: Props) {
+export function AppsMenu({ children, ...props }: Props) {
   return (
-    <Popover
-      {...props}
-      button={
-        <SidebarButton
-          label="Apps"
-          icon={<AppsIcon />}
-          ButtonComponent={Popover.Button}
-        />
-      }
-    >
-      hi
+    <Popover {...props} button={<Popover.Button icon={<AppsIcon />} />}>
+      {children}
     </Popover>
   )
 }

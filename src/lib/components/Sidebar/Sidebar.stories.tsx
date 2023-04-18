@@ -4,6 +4,7 @@ import { SidebarEntry } from "../SidebarEntry"
 
 import CarIcon from "./CarIcon"
 
+import { AppsMenu } from "../AppsMenu"
 import { BurgerMenu } from "../BurgerMenu"
 import { Popover } from "../Popover"
 import Sidebar from "./Sidebar"
@@ -47,7 +48,8 @@ FullExample.args = {
     </>
   ),
   footer: (
-    <div className="p-1.5">
+    <>
+      <AppsMenu />
       <BurgerMenu>
         <Popover.MenuGroup groupLabel="Group 1">
           <Popover.MenuItem label="Test" action={() => alert("Clicked")} />
@@ -62,6 +64,6 @@ FullExample.args = {
           <Popover.MenuItem label="Test" action={() => alert("Clicked")} />
         </Popover.MenuGroup>
       </BurgerMenu>
-    </div>
+    </>
   ),
 }
