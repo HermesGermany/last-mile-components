@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react"
+import { Meta, StoryFn } from "@storybook/react"
 import BurgerMenu from "./BurgerMenu"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -7,29 +7,22 @@ export default {
   component: BurgerMenu,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
-} as ComponentMeta<typeof BurgerMenu>
+} as Meta<typeof BurgerMenu>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof BurgerMenu> = (args) => (
-  <BurgerMenu {...args} />
+const Template: StoryFn<typeof BurgerMenu> = (args) => (
+  <div className="w-14">
+    <BurgerMenu {...args} />
+  </div>
 )
 
 export const Basic = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Basic.args = {}
+Basic.args = {
+  buttonProps: {},
+  children: <div className="">Beispielinhalt</div>,
+}
 
 export const WithSomeItems = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-WithSomeItems.args = {
-  menuItems: [
-    { content: "hello" },
-    {
-      content: (
-        <div className="flex justify-between">
-          <div>Useraccount</div>
-          <div>hi</div>
-        </div>
-      ),
-    },
-  ],
-}
+WithSomeItems.args = {}
