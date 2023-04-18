@@ -24,8 +24,8 @@ const SidebarButton = ({
       } ${className}`}
       onClick={onClick}
     >
-      {icon && <div className="w-full px-3 pb-1 pt-2">{icon}</div>}
-      {label && <span className="text-hermes-grey-light">{label}</span>}
+      {icon && <div className="w-full px-3.5 pb-1 pt-2">{icon}</div>}
+      {label && <span className="text-white">{label}</span>}
     </ButtonComponent>
   )
 }
