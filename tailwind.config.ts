@@ -5,7 +5,7 @@ const twConfig = {
       colors: {
         "hermes-blue": "var(--hermes-blue)",
         "hermes-blue-hover": "var(--hermes-blue-hover)",
-        "hermes-lightblue": "var(--hermes-lightblue)",
+        "hermes-blue-light": "var(--hermes-blue-light)",
         "hermes-orange": "var(--hermes-orange)",
         "hermes-orange-hover": "var(--hermes-orange-hover)",
         "hermes-signal-green": "var(--hermes-signal-green)",

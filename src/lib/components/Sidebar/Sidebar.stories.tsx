@@ -1,12 +1,13 @@
 import { Meta, StoryFn } from "@storybook/react"
 
-import { AppsMenu } from "../AppsMenu"
-
 import { SidebarEntry } from "../SidebarEntry"
 
 import CarIcon from "./CarIcon"
 
+import { BurgerMenu } from "../BurgerMenu"
+import { Popover } from "../Popover"
 import Sidebar from "./Sidebar"
+import ZSBIcon from "./ZSBIcon"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -33,7 +34,11 @@ FullExample.args = {
   imgSrc: "https://placehold.jp/75x75.png",
   children: (
     <>
-      <SidebarEntry label="Dispo" onClick={() => alert("Clicked!")} />
+      <SidebarEntry
+        label="Dispo"
+        icon={<ZSBIcon />}
+        onClick={() => alert("Clicked!")}
+      />
       <SidebarEntry
         label="Touren"
         icon={<CarIcon />}
@@ -42,8 +47,21 @@ FullExample.args = {
     </>
   ),
   footer: (
-    <div className="p-2">
-      <AppsMenu />
+    <div className="p-1.5">
+      <BurgerMenu>
+        <Popover.MenuGroup groupLabel="Group 1">
+          <Popover.MenuItem label="Test" action={() => alert("Clicked")} />
+          <Popover.MenuItem label="Test" action={() => alert("Clicked")} />
+          <Popover.MenuItem label="Test" action={() => alert("Clicked")} />
+          <Popover.MenuItem label="Test" action={() => alert("Clicked")} />
+        </Popover.MenuGroup>
+        <Popover.MenuGroup groupLabel="Group 2">
+          <Popover.MenuItem label="Test" action={() => alert("Clicked")} />
+        </Popover.MenuGroup>
+        <Popover.MenuGroup groupLabel="Group 3">
+          <Popover.MenuItem label="Test" action={() => alert("Clicked")} />
+        </Popover.MenuGroup>
+      </BurgerMenu>
     </div>
   ),
 }

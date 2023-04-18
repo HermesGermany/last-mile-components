@@ -69,7 +69,7 @@ export function CustomPopover({
   })
 
   return (
-    <Popover className="relative" {...htmlProps}>
+    <Popover {...htmlProps}>
       <div ref={setReferenceElement}>{button}</div>
       <Transition
         as={Fragment}

@@ -5,7 +5,7 @@ import MenuIcon from "../Sidebar/MenuIcon"
 // import { MenuItem, SidebarMenu } from "../SidebarMenu"
 
 export type Props = HTMLAttributes<HTMLDivElement> & {
-  buttonProps: SidebarButtonProps
+  buttonProps?: SidebarButtonProps
 }
 
 export function BurgerMenu({ children, buttonProps, ...htmlProps }: Props) {
