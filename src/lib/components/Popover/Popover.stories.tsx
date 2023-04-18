@@ -21,5 +21,20 @@ export const Basic = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Basic.args = {
   button: <Popover.Button icon={<AppsIcon />} label="Button" />,
-  children: <div>kA</div>,
+  children: (
+    <>
+      <Popover.MenuGroup groupLabel="Group 1">
+        <Popover.MenuItem label="Test" action={() => alert("Clicked")} />
+        <Popover.MenuItem label="Test" action={() => alert("Clicked")} />
+        <Popover.MenuItem label="Test" action={() => alert("Clicked")} />
+        <Popover.MenuItem label="Test" action={() => alert("Clicked")} />
+      </Popover.MenuGroup>
+      <Popover.MenuGroup groupLabel="Group 2">
+        <Popover.MenuItem label="Test" action={() => alert("Clicked")} />
+      </Popover.MenuGroup>
+      <Popover.MenuGroup groupLabel="Group 3">
+        <Popover.MenuItem label="Test" action={() => alert("Clicked")} />
+      </Popover.MenuGroup>
+    </>
+  ),
 }
