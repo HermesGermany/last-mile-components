@@ -1,6 +1,5 @@
 import { Meta, StoryFn } from "@storybook/react"
-import SidebarButton from "../../../components/SidebarButton"
-import AppsIcon from "./AppsIcon"
+import appsIcon from "./appsIcon.svg"
 import AppsMenu from "./AppsMenu"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -21,12 +20,27 @@ const Template: StoryFn<typeof AppsMenu> = (args) => (
 export const Basic = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Basic.args = {
-  children: (
-    <div className="grid grid-cols-2 grid-rows-2 gap-2 bg-gray-600">
-      <SidebarButton icon={<AppsIcon />} />
-      <SidebarButton icon={<AppsIcon />} />
-      <SidebarButton icon={<AppsIcon />} />
-      <SidebarButton icon={<AppsIcon />} />
-    </div>
-  ),
+  popoverTitle: "Hermes Apps",
+  apps: [
+    {
+      icon: appsIcon,
+      label: "Test",
+      href: "https://google.de",
+    },
+    {
+      icon: appsIcon,
+      label: "Test",
+      href: "https://google.de",
+    },
+    {
+      icon: appsIcon,
+      label: "Test",
+      href: "https://google.de",
+    },
+    {
+      icon: appsIcon,
+      label: "Test",
+      href: "https://google.de",
+    },
+  ],
 }

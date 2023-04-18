@@ -7,6 +7,7 @@ import { Placement } from "./placementTypes"
 
 export type Props = HTMLAttributes<HTMLDivElement> & {
   button: React.ReactNode
+  popoverTitle?: string
   children: React.ReactNode
   popoverPlacement?: Placement
 }
@@ -57,6 +58,7 @@ export function CustomPopover({
   button,
   children,
   popoverPlacement = "right-end",
+  popoverTitle,
   ...htmlProps
 }: Props) {
   const [referenceElement, setReferenceElement] =
@@ -86,6 +88,11 @@ export function CustomPopover({
           style={styles.popper}
           {...attributes.popper}
         >
+          {popoverTitle && (
+            <span className="mb-4 text-start text-xs font-medium text-hermes-grey-50">
+              {popoverTitle}
+            </span>
+          )}
           {children}
         </Popover.Panel>
       </Transition>
