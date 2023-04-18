@@ -1,9 +1,9 @@
 import { HTMLAttributes } from "react"
-import theme from "../../../../tailwind.config"
+// import theme from "../../../../tailwind.config"
 
 type BaseProps = {
   description: string
-  color?: keyof typeof theme.theme.extend.colors
+  color?: string
 }
 
 const positionStyles = {
