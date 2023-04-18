@@ -34,7 +34,7 @@ export function AppsMenu({ apps, popoverTitle, ...props }: Props) {
   return (
     <Popover
       {...props}
-      button={<Popover.Button icon={<AppsIcon />} />}
+      button={<Popover.Button icon={<AppsIcon />} label="Apps" />}
       popoverTitle={popoverTitle}
     >
       <div className="flex flex-wrap justify-evenly gap-3">

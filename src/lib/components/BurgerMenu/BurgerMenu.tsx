@@ -1,7 +1,7 @@
 import { HTMLAttributes } from "react"
 import { SidebarButtonProps } from "../../../components/SidebarButton"
 import { Popover } from "../Popover"
-import MenuIcon from "../Sidebar/MenuIcon"
+import MenuIcon from "./MenuIcon"
 // import { MenuItem, SidebarMenu } from "../SidebarMenu"
 
 export type Props = HTMLAttributes<HTMLDivElement> & {

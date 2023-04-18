@@ -2,7 +2,9 @@ import { Popover, Transition } from "@headlessui/react"
 import { Fragment, HTMLAttributes, ReactNode, useState } from "react"
 
 import { usePopper } from "react-popper"
-import SidebarButton from "../../../components/SidebarButton"
+import SidebarButton, {
+  SidebarButtonProps,
+} from "../../../components/SidebarButton"
 import { Placement } from "./placementTypes"
 
 export type Props = HTMLAttributes<HTMLDivElement> & {
@@ -102,7 +104,7 @@ export function CustomPopover({
 
 CustomPopover.MenuGroup = MenuGroup
 CustomPopover.MenuItem = MenuItem
-CustomPopover.Button = (props: any) => {
+CustomPopover.Button = (props: SidebarButtonProps) => {
   return <SidebarButton {...props} ButtonComponent={Popover.Button} />
 }
 

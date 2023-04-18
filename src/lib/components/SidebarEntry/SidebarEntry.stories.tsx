@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
-import MenuIcon from "../Sidebar/MenuIcon"
+import MenuIcon from "../BurgerMenu/MenuIcon"
 import SidebarEntry from "./SidebarEntry"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

@@ -1,14 +1,16 @@
 import { Meta, StoryFn } from "@storybook/react"
 
-import { SidebarEntry } from "../SidebarEntry"
-
-import CarIcon from "./CarIcon"
-
 import { AppsMenu } from "../AppsMenu"
 import { BurgerMenu } from "../BurgerMenu"
 import { Popover } from "../Popover"
+import { SidebarEntry } from "../SidebarEntry"
+import CarIcon from "./assets/CarIcon"
+import ghost from "./assets/ghost.svg"
+import kiwi from "./assets/kiwi.svg"
+import pizza from "./assets/pizza.svg"
+import wholeApple from "./assets/wholeApple.svg"
+import ZSBIcon from "./assets/ZSBIcon"
 import Sidebar from "./Sidebar"
-import ZSBIcon from "./ZSBIcon"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -32,7 +34,8 @@ export const FullExample = Template.bind({})
 
 FullExample.args = {
   title: "Logo",
-  imgSrc: "https://placehold.jp/75x75.png",
+  imgSrc:
+    "https://placehold.jp/ffffff/0091cd/75x75.png?css=%7B%22border-radius%22%3A%225px%22%7D",
   children: (
     <>
       <SidebarEntry
@@ -49,7 +52,31 @@ FullExample.args = {
   ),
   footer: (
     <>
-      <AppsMenu />
+      <AppsMenu
+        popoverTitle="Andere Apps"
+        apps={[
+          {
+            icon: wholeApple,
+            label: "App 1",
+            href: "https://google.de",
+          },
+          {
+            icon: ghost,
+            label: "App 2",
+            href: "https://google.de",
+          },
+          {
+            icon: pizza,
+            label: "App 3",
+            href: "https://google.de",
+          },
+          {
+            icon: kiwi,
+            label: "App 4",
+            href: "https://google.de",
+          },
+        ]}
+      />
       <BurgerMenu>
         <Popover.MenuGroup groupLabel="Group 1">
           <Popover.MenuItem label="Test" action={() => alert("Clicked")} />
