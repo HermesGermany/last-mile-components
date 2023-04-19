@@ -32,6 +32,29 @@ Basic.args = {
 
 export const FullExample = Template.bind({})
 
+export const appsList = [
+  {
+    icon: wholeApple,
+    label: "App 1",
+    href: "https://google.de",
+  },
+  {
+    icon: ghost,
+    label: "App 2",
+    href: "https://google.de",
+  },
+  {
+    icon: pizza,
+    label: "App 3",
+    href: "https://google.de",
+  },
+  {
+    icon: kiwi,
+    label: "App 4",
+    href: "https://google.de",
+  },
+]
+
 FullExample.args = {
   title: "Logo",
   imgSrc:
@@ -52,31 +75,7 @@ FullExample.args = {
   ),
   footer: (
     <>
-      <AppsMenu
-        popoverTitle="Andere Apps"
-        apps={[
-          {
-            icon: wholeApple,
-            label: "App 1",
-            href: "https://google.de",
-          },
-          {
-            icon: ghost,
-            label: "App 2",
-            href: "https://google.de",
-          },
-          {
-            icon: pizza,
-            label: "App 3",
-            href: "https://google.de",
-          },
-          {
-            icon: kiwi,
-            label: "App 4",
-            href: "https://google.de",
-          },
-        ]}
-      />
+      <AppsMenu popoverTitle="Andere Apps" apps={appsList} />
       <BurgerMenu>
         <Popover.MenuGroup groupLabel="Group 1">
           <Popover.MenuItem label="Test" action={() => alert("Clicked")} />
