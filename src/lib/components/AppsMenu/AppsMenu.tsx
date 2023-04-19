@@ -16,16 +16,22 @@ export type LinkedApp = {
 function AppTile({ app }: { app: LinkedApp }) {
   return (
     <a
-      className="tw-decoration-none tw-flex tw-h-24 tw-w-24 tw-cursor-pointer tw-flex-col tw-items-center tw-gap-3.5 tw-rounded tw-p-2.5 hover:tw-bg-hermes-grey-light hover:tw-text-hermes-blue"
+      className="tw-flex tw-h-28 tw-w-28 tw-cursor-pointer tw-flex-col tw-items-center tw-gap-3.5 tw-rounded tw-p-2.5 tw-text-hermes-grey tw-no-underline hover:tw-bg-hermes-grey-light hover:tw-text-hermes-blue"
       target="_blank"
       href={app.href}
       rel="noopener noreferrer"
       data-testid={`${app.label.replace(/ /g, "")}-testid`}
     >
-      <img src={app.icon} alt={`${app.label} Logo`} className="tw-w-8" />
-      <span className="tw-overflow-hidden tw-text-ellipsis tw-text-center tw-text-xs tw-font-normal">
-        {app.label}
-      </span>
+      <img
+        src={app.icon}
+        alt={`${app.label} Logo`}
+        className="tw-h-10 tw-w-auto"
+      />
+      <div className="tw-flex tw-w-full tw-flex-1 tw-items-center tw-justify-center">
+        <span className="tw-overflow-hidden tw-text-ellipsis tw-text-center tw-text-xs tw-font-normal">
+          {app.label}
+        </span>
+      </div>
     </a>
   )
 }

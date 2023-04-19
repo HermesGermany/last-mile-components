@@ -29,7 +29,7 @@ export function Sidebar({
 }: Props) {
   return (
     <div
-      className="tw-fixed tw-left-0 tw-top-0 tw-flex tw-h-full tw-w-16 tw-flex-col tw-justify-between tw-bg-hermes-blue"
+      className="tw-fixed tw-left-0 tw-top-0 tw-flex tw-h-full tw-w-[4.5rem] tw-flex-col tw-justify-between tw-bg-hermes-blue"
       {...htmlProps}
     >
       <div className="tw-relative">

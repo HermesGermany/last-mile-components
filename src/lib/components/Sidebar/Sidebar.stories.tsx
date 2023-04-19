@@ -35,22 +35,22 @@ export const FullExample = Template.bind({})
 export const appsList = [
   {
     icon: wholeApple,
-    label: "App 1",
+    label: "My Fruit Application",
     href: "https://google.de",
   },
   {
     icon: ghost,
-    label: "App 2",
+    label: "Ghost App",
     href: "https://google.de",
   },
   {
     icon: pizza,
-    label: "App 3",
+    label: "Delivery Helper",
     href: "https://google.de",
   },
   {
     icon: kiwi,
-    label: "App 4",
+    label: "Kiwi Bird Paradise",
     href: "https://google.de",
   },
 ]
