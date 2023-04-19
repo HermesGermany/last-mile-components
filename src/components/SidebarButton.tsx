@@ -13,7 +13,7 @@ export type SidebarButtonProps = {
 const SidebarButton = ({
   icon,
   onClick,
-  className,
+  className = "",
   label,
   ButtonComponent = JsxButton,
 }: SidebarButtonProps) => {
