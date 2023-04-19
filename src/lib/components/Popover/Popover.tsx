@@ -86,7 +86,7 @@ export function CustomPopover({
       >
         <Popover.Panel
           ref={setPopperElement}
-          className="tw-flex tw-w-64 tw-flex-col tw-rounded tw-bg-white tw-p-4 tw-text-hermes-grey tw-shadow"
+          className="tw-z-30 tw-flex tw-w-64 tw-flex-col tw-rounded tw-bg-white tw-p-4 tw-text-hermes-grey tw-shadow"
           style={styles.popper}
           {...attributes.popper}
         >
