@@ -19,13 +19,15 @@ const SidebarButton = ({
 }: SidebarButtonProps) => {
   return (
     <ButtonComponent
-      className={`ml-0 flex w-full flex-col items-center justify-around rounded pb-1 text-[10px] font-bold text-white outline-none hover:bg-white hover:bg-opacity-10 ${
-        icon ? "aspect-square" : "py-2"
+      className={`tw-ml-0 tw-flex tw-w-full tw-flex-col tw-items-center tw-justify-around tw-rounded tw-pb-1 tw-text-[10px] tw-font-bold tw-text-white tw-outline-none hover:tw-bg-white hover:tw-bg-opacity-10 ${
+        icon ? "tw-aspect-square" : "tw-py-2"
       } ${className}`}
       onClick={onClick}
     >
-      {icon && <div className="w-full px-3.5 pb-1 pt-2">{icon}</div>}
-      {label && <span className="text-white">{label}</span>}
+      {icon && (
+        <div className="tw-w-full tw-px-3.5 tw-pb-1 tw-pt-2">{icon}</div>
+      )}
+      {label && <span className="tw-text-white">{label}</span>}
     </ButtonComponent>
   )
 }

@@ -24,10 +24,10 @@ function MenuGroup({
   return (
     <div
       key={groupLabel}
-      className="-mx-4 flex select-none flex-col gap-0.5 border-b-2 border-b-hermes-grey-10 pb-1 pt-2 first:-mt-2 last:-mb-3 last:border-b-0"
+      className="tw-last:border-b-0 -tw-mx-4 tw-flex tw-select-none tw-flex-col tw-gap-0.5 tw-border-b-2 tw-border-b-hermes-grey-10 tw-pb-1 tw-pt-2 first:-tw-mt-2 last:-tw-mb-3"
     >
       {groupLabel && (
-        <div className="mb-1 px-4 text-xs font-medium text-hermes-grey-50">
+        <div className="tw-mb-1 tw-px-4 tw-text-xs tw-font-medium tw-text-hermes-grey-50">
           {groupLabel}
         </div>
       )}
@@ -47,7 +47,7 @@ function MenuItem({ label, action, children, ...rest }: ItemProps) {
     <button
       key={label}
       onClick={action}
-      className="relative flex h-8 items-center justify-between border-none bg-none px-4 text-start text-sm hover:bg-hermes-blue-light"
+      className="tw-relative tw-flex tw-h-8 tw-items-center tw-justify-between tw-border-none tw-bg-none tw-px-4 tw-text-start tw-text-sm hover:tw-bg-hermes-blue-light"
       {...rest}
     >
       <span>{label}</span>
@@ -77,21 +77,21 @@ export function CustomPopover({
       <div ref={setReferenceElement}>{button}</div>
       <Transition
         as={Fragment}
-        enter="transition ease-out duration-100"
-        enterFrom="transform opacity-0 scale-95"
-        enterTo="transform opacity-100 scale-100"
-        leave="transition ease-in duration-75"
-        leaveFrom="transform opacity-100 scale-100"
-        leaveTo="transform opacity-0 scale-95"
+        enter="tw-transition tw-ease-out tw-duration-100"
+        enterFrom="tw-transform tw-opacity-0 tw-scale-95"
+        enterTo="tw-transform tw-opacity-100 tw-scale-100"
+        leave="tw-transition tw-ease-in tw-duration-75"
+        leaveFrom="tw-transform tw-opacity-100 tw-scale-100"
+        leaveTo="tw-transform tw-opacity-0 tw-scale-95"
       >
         <Popover.Panel
           ref={setPopperElement}
-          className="flex w-64 flex-col rounded bg-white p-4 text-hermes-grey shadow"
+          className="tw-flex tw-w-64 tw-flex-col tw-rounded tw-bg-white tw-p-4 tw-text-hermes-grey tw-shadow"
           style={styles.popper}
           {...attributes.popper}
         >
           {popoverTitle && (
-            <span className="mb-4 text-start text-xs font-medium text-hermes-grey-50">
+            <span className="tw-mb-4 tw-text-start tw-text-xs tw-font-medium tw-text-hermes-grey-50">
               {popoverTitle}
             </span>
           )}

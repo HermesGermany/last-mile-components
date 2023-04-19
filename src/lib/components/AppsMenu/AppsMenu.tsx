@@ -16,14 +16,14 @@ export type LinkedApp = {
 function AppTile({ app }: { app: LinkedApp }) {
   return (
     <a
-      className="decoration-none flex h-24 w-24 cursor-pointer flex-col items-center gap-3.5 rounded p-2.5 hover:bg-hermes-grey-light hover:text-hermes-blue"
+      className="tw-decoration-none tw-flex tw-h-24 tw-w-24 tw-cursor-pointer tw-flex-col tw-items-center tw-gap-3.5 tw-rounded tw-p-2.5 hover:tw-bg-hermes-grey-light hover:tw-text-hermes-blue"
       target="_blank"
       href={app.href}
       rel="noopener noreferrer"
       data-testid={`${app.label.replace(/ /g, "")}-testid`}
     >
-      <img src={app.icon} alt={`${app.label} Logo`} className="w-8" />
-      <span className="overflow-hidden text-ellipsis text-center text-xs font-normal">
+      <img src={app.icon} alt={`${app.label} Logo`} className="tw-w-8" />
+      <span className="tw-overflow-hidden tw-text-ellipsis tw-text-center tw-text-xs tw-font-normal">
         {app.label}
       </span>
     </a>
@@ -37,7 +37,7 @@ export function AppsMenu({ apps, popoverTitle, ...props }: Props) {
       button={<Popover.Button icon={<AppsIcon />} label="Apps" />}
       popoverTitle={popoverTitle}
     >
-      <div className="flex flex-wrap justify-evenly gap-3">
+      <div className="tw-flex tw-flex-wrap tw-justify-evenly tw-gap-3">
         {apps.map((app) => (
           <AppTile key={app.label} app={app} />
         ))}

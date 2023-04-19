@@ -57,7 +57,7 @@ export function NotificationDot(props: Props) {
 
   return (
     <div
-      className={`absolute h-2 w-2 rounded-full ${color}`}
+      className={`tw-absolute tw-h-2 tw-w-2 tw-rounded-full ${color}`}
       style={{ ...newPosition }}
       title={description}
       {...htmlProps}

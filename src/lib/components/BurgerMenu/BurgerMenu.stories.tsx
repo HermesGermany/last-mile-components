@@ -11,8 +11,8 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof BurgerMenu> = (args) => (
-  <div className="flex h-screen w-full items-center justify-center">
-    <div className="w-14">
+  <div className="tw-flex tw-h-screen tw-w-full tw-items-center tw-justify-center">
+    <div className="tw-w-14">
       <BurgerMenu {...args} />
     </div>
   </div>
