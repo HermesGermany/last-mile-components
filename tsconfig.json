@@ -13,6 +13,9 @@
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "outDir": "dist",
+    "declaration": true,
+    "declarationMap": true,
     "noEmit": true,
     "jsx": "react-jsx",
     "types": ["vitest/globals"]

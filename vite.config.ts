@@ -3,18 +3,18 @@ import path from "node:path"
 import tailwindcss from "tailwindcss"
 import dts from "vite-plugin-dts"
 import { defineConfig } from "vitest/config"
+import { dependencies, peerDependencies } from "./package.json"
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    react(),
+    react({
+      jsxRuntime: "classic",
+    }),
     dts({
       insertTypesEntry: true,
     }),
   ],
-  resolve: {
-    preserveSymlinks: true,
-  },
   css: {
     postcss: {
       plugins: [tailwindcss],
@@ -28,15 +28,20 @@ export default defineConfig({
       fileName: (format) => `lmc.${format}.js`,
     },
     rollupOptions: {
-      external: ["react", "react-dom", "tailwindcss"],
+      external: [
+        ...Object.keys(peerDependencies),
+        ...Object.keys(dependencies),
+      ],
       output: {
         globals: {
           react: "React",
-          "react-dom": "ReactDOM",
-          tailwindcss: "tailwindcss",
+          "@headlessui/react": "@headlessui/react",
+          "react-popper": "reactPopper",
         },
       },
     },
+    sourcemap: true,
+    target: "esnext",
   },
   test: {
     globals: true,
