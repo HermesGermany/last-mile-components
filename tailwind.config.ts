@@ -1,7 +1,7 @@
 const twConfig = {
   jit: true,
   corePlugins: {
-    // preflight: false,
+    preflight: false,
   },
   prefix: "tw-",
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
