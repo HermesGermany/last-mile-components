@@ -27,7 +27,8 @@ export const Basic = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Basic.args = {
   title: "Test",
-  imgSrc: "https://placehold.jp/150x150.png",
+  imgSrc:
+    "https://placehold.jp/ffffff/0091cd/44x44.png?css=%7B%22border-radius%22%3A%225px%22%7D",
 }
 
 export const FullExample = Template.bind({})
@@ -58,7 +59,7 @@ export const appsList = [
 FullExample.args = {
   title: "Logo",
   imgSrc:
-    "https://placehold.jp/ffffff/0091cd/75x75.png?css=%7B%22border-radius%22%3A%225px%22%7D",
+    "https://placehold.jp/ffffff/0091cd/80x80.png?css=%7B%22border-radius%22%3A%225px%22%7D",
   children: (
     <>
       <SidebarEntry

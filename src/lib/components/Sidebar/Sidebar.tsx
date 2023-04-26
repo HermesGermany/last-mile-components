@@ -15,7 +15,7 @@ function LogoImage(
 ) {
   return (
     <div className="tw-p-1">
-      <img {...props} />
+      <img {...props} className="tw-h-full tw-w-full tw-object-scale-down" />
     </div>
   )
 }
@@ -29,10 +29,10 @@ export function Sidebar({
 }: Props) {
   return (
     <div
-      className="tw-fixed tw-left-0 tw-top-0 tw-flex tw-h-full tw-w-[4.5rem] tw-flex-col tw-justify-between tw-bg-hermes-blue"
+      className="items-center tw-fixed tw-left-0 tw-top-0 tw-flex tw-h-full tw-w-[4.75rem] tw-flex-col tw-justify-between tw-bg-hermes-blue"
       {...htmlProps}
     >
-      <div className="tw-relative">
+      <div className="tw-flex tw-flex-col tw-items-center">
         <div className="tw-mb-2 tw-aspect-square">
           {imgSrc ? (
             <LogoImage src={imgSrc} title={imgTitle} alt={imgTitle} />
