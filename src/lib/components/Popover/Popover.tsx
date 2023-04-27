@@ -47,7 +47,7 @@ function MenuItem({ label, action, children, ...rest }: ItemProps) {
     <button
       key={label}
       onClick={action}
-      className="tw-relative tw-flex tw-h-8 tw-items-center tw-justify-between tw-border-none tw-bg-none tw-px-6 tw-text-start hover:tw-bg-hermes-grey-light"
+      className="tw-relative tw-flex tw-h-9 tw-cursor-pointer tw-items-center tw-justify-between tw-border-none tw-bg-transparent tw-px-6 tw-text-start tw-font-sans tw-text-hermes-grey hover:tw-bg-hermes-grey-light"
       {...rest}
     >
       <span>{label}</span>
