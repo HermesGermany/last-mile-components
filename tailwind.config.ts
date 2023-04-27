@@ -27,6 +27,7 @@ const twConfig = {
         "hermes-grey-light": "var(--hermes-grey-light)",
       },
       fontFamily: {
+        sans: ["Segoe UI", "Tahoma", "Geneva", "Verdana", "sans-serif"],
         marselis: ["Marselis"],
       },
     },
