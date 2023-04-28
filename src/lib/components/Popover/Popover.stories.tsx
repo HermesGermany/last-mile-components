@@ -1,22 +1,19 @@
 import { Meta, StoryFn } from "@storybook/react"
-import AppsIcon from "../AppsMenu/AppsIcon"
+import BlueContainer from "../../../storybook-helper-components/BlueContainer"
 import Popover from "./Popover"
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "Design System/Components/Popover",
   component: Popover,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
 } as Meta<typeof Popover>
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Popover> = (args) => (
-  <div className="tw-flex tw-h-screen tw-w-full tw-items-center tw-justify-center">
+  <BlueContainer>
     <div className="w-14">
       <Popover {...args} />
     </div>
-  </div>
+  </BlueContainer>
 )
 
 const children = (
@@ -37,8 +34,7 @@ const children = (
 )
 
 export const Basic = Template.bind({})
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 Basic.args = {
-  button: <Popover.Button icon={<AppsIcon />} label="Button" />,
+  button: <Popover.Button label="Click for popover" />,
   children,
 }

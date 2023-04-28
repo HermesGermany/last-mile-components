@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
+import BlueContainer from "../../../storybook-helper-components/BlueContainer"
 import MenuIcon from "../BurgerMenu/MenuIcon"
 import SidebarEntry from "./SidebarEntry"
 
@@ -12,9 +13,11 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof SidebarEntry> = (args) => (
-  <div className="tw-w-14">
-    <SidebarEntry {...args} />
-  </div>
+  <BlueContainer>
+    <div className="tw-w-14">
+      <SidebarEntry {...args} />
+    </div>
+  </BlueContainer>
 )
 
 export const TitleAndIcon = Template.bind({})

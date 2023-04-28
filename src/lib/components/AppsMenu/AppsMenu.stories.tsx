@@ -1,6 +1,6 @@
 import { Meta, StoryFn } from "@storybook/react"
+import { appsList } from "../../../storybook-helper-components/appsList"
 import BlueContainer from "../../../storybook-helper-components/BlueContainer"
-import { appsList } from "../Sidebar/Sidebar.stories"
 import AppsMenu from "./AppsMenu"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

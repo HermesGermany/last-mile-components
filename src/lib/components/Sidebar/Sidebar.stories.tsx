@@ -1,14 +1,11 @@
 import { Meta, StoryFn } from "@storybook/react"
+import { appsList } from "../../../storybook-helper-components/appsList"
+import CarIcon from "../../../storybook-helper-components/assets/CarIcon"
+import ZSBIcon from "../../../storybook-helper-components/assets/ZSBIcon"
 import { AppsMenu } from "../AppsMenu"
 import { BurgerMenu } from "../BurgerMenu"
 import { Popover } from "../Popover"
 import { SidebarEntry } from "../SidebarEntry"
-import CarIcon from "./assets/CarIcon"
-import ghost from "./assets/ghost.svg"
-import kiwi from "./assets/kiwi.svg"
-import pizza from "./assets/pizza.svg"
-import wholeApple from "./assets/wholeApple.svg"
-import ZSBIcon from "./assets/ZSBIcon"
 import Sidebar from "./Sidebar"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -24,32 +21,9 @@ const Template: StoryFn<typeof Sidebar> = (args) => <Sidebar {...args} />
 
 export const Basic = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Basic.args = {}
+Basic.args = { imgTitle: "Basic" }
 
 export const FullExample = Template.bind({})
-
-export const appsList = [
-  {
-    icon: wholeApple,
-    label: "My Fruit Application",
-    href: "https://google.de",
-  },
-  {
-    icon: ghost,
-    label: "Ghost App",
-    href: "https://google.de",
-  },
-  {
-    icon: pizza,
-    label: "Delivery Helper",
-    href: "https://google.de",
-  },
-  {
-    icon: kiwi,
-    label: "Kiwi Bird Paradise",
-    href: "https://google.de",
-  },
-]
 
 FullExample.args = {
   title: "Logo",
