@@ -1,5 +1,4 @@
 import { Meta, StoryFn } from "@storybook/react"
-
 import { AppsMenu } from "../AppsMenu"
 import { BurgerMenu } from "../BurgerMenu"
 import { Popover } from "../Popover"
@@ -25,9 +24,7 @@ const Template: StoryFn<typeof Sidebar> = (args) => <Sidebar {...args} />
 
 export const Basic = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Basic.args = {
-  imgTitle: "Test",
-}
+Basic.args = {}
 
 export const FullExample = Template.bind({})
 
