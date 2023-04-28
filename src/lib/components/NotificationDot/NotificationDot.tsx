@@ -1,32 +1,37 @@
 import { HTMLAttributes } from "react"
-// import theme from "../../../../tailwind.config"
-
-type BaseProps = {
-  description: string
-  color?: string
-}
 
 const positionStyles = {
   topRight: {
-    top: 0,
-    right: "-5px",
+    top: "-0.375rem",
+    right: "-0.375rem",
     bottom: "unset",
     left: "unset",
   },
-  left: {
+  leftForMenuItem: {
     top: 0,
     bottom: 0,
     left: 7,
     right: "unset",
     margin: "auto 0",
   },
+  left: {
+    top: 0,
+    bottom: 0,
+    left: "-0.5rem",
+    right: "unset",
+    margin: "auto 0",
+  },
 }
 
-type GivenPosition = {
+type BaseProps = {
+  backgroundColor?: string
+}
+
+type GivenPositionProps = {
   position?: keyof typeof positionStyles
 }
 
-type CustomPosition = {
+type CustomPositionProps = {
   position: "custom"
   customPosition: {
     left?: number
@@ -38,13 +43,12 @@ type CustomPosition = {
 
 export type Props = HTMLAttributes<HTMLDivElement> &
   BaseProps &
-  (GivenPosition | CustomPosition)
+  (GivenPositionProps | CustomPositionProps)
 
 export function NotificationDot(props: Props) {
   const {
-    description,
     position = "topRight",
-    color = "hermes-orange",
+    backgroundColor = "#ffa800",
     ...htmlProps
   } = props
   let newPosition
@@ -57,9 +61,8 @@ export function NotificationDot(props: Props) {
 
   return (
     <div
-      className={`tw-absolute tw-h-2 tw-w-2 tw-rounded-full ${color}`}
-      style={{ ...newPosition }}
-      title={description}
+      className={`tw-absolute tw-h-3 tw-w-3 tw-rounded-full tw-drop-shadow`}
+      style={{ ...newPosition, backgroundColor: backgroundColor }}
       {...htmlProps}
     />
   )
