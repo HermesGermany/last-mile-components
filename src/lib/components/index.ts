@@ -1,5 +1,6 @@
 export * from "./AppsMenu"
 export * from "./BurgerMenu"
+export * from "./NotificationDot"
 export * from "./Popover"
 export * from "./Sidebar"
 export * from "./SidebarEntry"

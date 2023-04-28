@@ -3,7 +3,7 @@ import NotificationDot from "./NotificationDot"
 
 test("renders", () => {
   const { getByTestId } = render(
-    <NotificationDot data-testid="notification-dot" description="test" />
+    <NotificationDot data-testid="notification-dot" />
   )
   expect(getByTestId("notification-dot")).toBeDefined()
 })
