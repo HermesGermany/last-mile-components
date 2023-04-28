@@ -1,4 +1,6 @@
 import { Meta, StoryFn } from "@storybook/react"
+import BlueContainer from "../../../storybook-helper-components/BlueContainer"
+import { BurgerMenuEntries } from "../../../storybook-helper-components/BurgerMenuEntries"
 import BurgerMenu from "./BurgerMenu"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -9,36 +11,22 @@ export default {
   argTypes: {},
 } as Meta<typeof BurgerMenu>
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof BurgerMenu> = (args) => (
-  <div className="tw-flex tw-h-screen tw-w-full tw-items-center tw-justify-center">
+  <BlueContainer>
     <div className="tw-w-14">
       <BurgerMenu {...args} />
     </div>
-  </div>
+  </BlueContainer>
 )
 
 export const Basic = Template.bind({})
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 Basic.args = {
   buttonProps: {},
-  children: (
-    <div className="">
-      Beispielinhalt
-      <br />
-      Zeile 2
-    </div>
-  ),
+  children: <div>Basic</div>,
 }
 
-export const WithSomeItems = Template.bind({})
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-WithSomeItems.args = {
-  children: (
-    <div className="">
-      Beispielinhalt
-      <br />
-      Zeile 2
-    </div>
-  ),
+export const WithMenuGroupsAndItems = Template.bind({})
+WithMenuGroupsAndItems.args = {
+  buttonProps: {},
+  children: <BurgerMenuEntries />,
 }
