@@ -29,22 +29,22 @@ export function Sidebar({
 }: Props) {
   return (
     <div
-      className="items-center tw-fixed tw-left-0 tw-top-0 tw-flex tw-h-full tw-w-[4.75rem] tw-flex-col tw-justify-between tw-bg-hermes-blue"
+      className="items-center tw-fixed tw-left-0 tw-top-0 tw-box-border tw-flex tw-h-full tw-w-[4.75rem] tw-flex-col tw-justify-between tw-bg-hermes-blue tw-p-2"
       {...htmlProps}
     >
-      <div className="tw-flex tw-flex-col tw-items-center">
-        <div className="tw-mb-2 tw-aspect-square">
+      <div className="tw-flex tw-flex-col tw-gap-2">
+        <div className="tw-mb-3 tw-flex tw-items-center tw-justify-center">
           {imgSrc ? (
             <LogoImage src={imgSrc} title={imgTitle} alt={imgTitle} />
           ) : (
-            <div className="tw-flex tw-h-full tw-items-center tw-justify-center">
-              <span>{imgTitle}</span>
-            </div>
+            <span className="tw-overflow-hidden tw-text-ellipsis tw-text-center tw-font-semibold tw-text-white">
+              {imgTitle}
+            </span>
           )}
         </div>
-        <div className="tw-flex tw-flex-col tw-gap-1 tw-p-1.5">{children}</div>
+        {children}
       </div>
-      <div className="tw-flex tw-flex-col tw-gap-1 tw-p-1.5">{footer}</div>
+      <div className="tw-flex tw-flex-col tw-gap-2">{footer}</div>
     </div>
   )
 }

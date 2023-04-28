@@ -26,9 +26,7 @@ const Template: StoryFn<typeof Sidebar> = (args) => <Sidebar {...args} />
 export const Basic = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Basic.args = {
-  title: "Test",
-  imgSrc:
-    "https://placehold.jp/ffffff/0091cd/44x44.png?css=%7B%22border-radius%22%3A%225px%22%7D",
+  imgTitle: "Test",
 }
 
 export const FullExample = Template.bind({})
@@ -58,6 +56,7 @@ export const appsList = [
 
 FullExample.args = {
   title: "Logo",
+  imgTitle: "My Company",
   imgSrc:
     "https://placehold.jp/ffffff/0091cd/80x80.png?css=%7B%22border-radius%22%3A%225px%22%7D",
   children: (
