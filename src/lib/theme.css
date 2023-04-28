@@ -27,3 +27,15 @@
   --hermes-grey: #3c3c41;
   --hermes-grey-light: #e2e2e3;
 }
+
+/* tailwind base border styles without preflight  */
+@layer components {
+  :where(
+      [class*="tw-border"],
+      [class*="tw-border"]::before,
+      [class*="tw-border"]::after,
+      [class*="tw-divide"] > *
+    ) {
+    border: solid 0 theme("borderColor.DEFAULT");
+  }
+}
