@@ -91,7 +91,7 @@ FullExample.args = {
             action={() => alert("Clicked")}
           />
           <Popover.MenuItem
-            label="Menu item with very very very long text"
+            label="Menu item with very very long text"
             action={() => alert("Clicked")}
           />
         </Popover.MenuGroup>

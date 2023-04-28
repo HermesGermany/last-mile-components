@@ -24,7 +24,7 @@ function MenuGroup({
   return (
     <div
       key={groupLabel}
-      className="-tw-mx-6 tw-flex tw-select-none tw-flex-col tw-gap-0.5 tw-border-b-2 tw-border-b-hermes-grey-10 tw-pb-1 tw-pt-2 first:-tw-mt-2 last:-tw-mb-3 last:tw-border-b-0"
+      className="-tw-mx-6 tw-flex tw-select-none tw-flex-col tw-gap-0.5 tw-border-b tw-border-solid tw-border-b-hermes-grey-10 tw-pb-1 tw-pt-2 first:-tw-mt-2 last:-tw-mb-3 last:tw-border-b-0"
     >
       {groupLabel && (
         <div className="tw-mb-1 tw-px-6 tw-text-sm tw-font-medium tw-text-hermes-grey-50">
@@ -47,7 +47,7 @@ function MenuItem({ label, action, children, ...rest }: ItemProps) {
     <button
       key={label}
       onClick={action}
-      className="tw-relative tw-flex tw-h-9 tw-cursor-pointer tw-items-center tw-justify-between tw-border-none tw-bg-transparent tw-px-6 tw-text-start tw-font-sans tw-text-hermes-grey hover:tw-bg-hermes-grey-light"
+      className="tw-relative tw-flex tw-h-9 tw-cursor-pointer tw-items-center tw-justify-between tw-border-none tw-bg-transparent tw-px-6 tw-text-start tw-font-sans tw-text-base tw-text-hermes-grey hover:tw-bg-hermes-blue-light"
       {...rest}
     >
       <span>{label}</span>
@@ -86,7 +86,7 @@ export function CustomPopover({
       >
         <Popover.Panel
           ref={setPopperElement}
-          className="tw-z-30 tw-flex tw-w-72 tw-flex-col tw-rounded tw-bg-white tw-p-6 tw-text-hermes-grey tw-shadow"
+          className="tw-z-30 tw-box-border tw-flex tw-w-max tw-max-w-sm tw-flex-col tw-rounded tw-bg-white tw-p-6 tw-text-hermes-grey tw-shadow"
           style={styles.popper}
           {...attributes.popper}
         >
