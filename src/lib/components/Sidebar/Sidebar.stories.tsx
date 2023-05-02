@@ -46,6 +46,7 @@ FullExample.args = {
   ),
   footer: (
     <>
+      <SidebarEntry label="Feedback" onClick={() => alert("Clicked!")} />
       <AppsMenu popoverTitle="Andere Apps" apps={appsList} />
       <BurgerMenu>
         <Popover.MenuGroup groupLabel="Group 1">
