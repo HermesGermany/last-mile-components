@@ -27,10 +27,8 @@ const SidebarButton = ({
       onClick={onClick}
     >
       {icon && (
-        <div className="tw-flex tw-items-center tw-justify-center tw-px-1.5">
-          <div className="tw-box-border tw-flex tw-aspect-square tw-h-fit tw-w-3/4">
-            {icon}
-          </div>
+        <div className="tw-box-border tw-flex tw-aspect-square tw-h-fit tw-w-3/5 tw-justify-center">
+          {icon}
         </div>
       )}
       {label && (
