@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from "@storybook/react"
 import { appsList } from "../../../storybook-helper-components/appsList"
-import CarIcon from "../../../storybook-helper-components/assets/CarIcon"
-import ZSBIcon from "../../../storybook-helper-components/assets/ZSBIcon"
+import SearchIcon from "../../../storybook-helper-components/assets/SearchIcon"
+import StarIcon from "../../../storybook-helper-components/assets/StarIcon"
 import { AppsMenu } from "../AppsMenu"
 import { BurgerMenu } from "../BurgerMenu"
 import { Popover } from "../Popover"
@@ -33,13 +33,13 @@ FullExample.args = {
   children: (
     <>
       <SidebarEntry
-        label="Dispo"
-        icon={<ZSBIcon />}
+        label="Star"
+        icon={<StarIcon />}
         onClick={() => alert("Clicked!")}
       />
       <SidebarEntry
-        label="Touren"
-        icon={<CarIcon />}
+        label="Search"
+        icon={<SearchIcon />}
         onClick={() => alert("Clicked!")}
       />
     </>
