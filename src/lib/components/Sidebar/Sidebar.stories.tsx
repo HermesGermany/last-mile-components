@@ -17,7 +17,11 @@ export default {
 } as Meta<typeof Sidebar>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: StoryFn<typeof Sidebar> = (args) => <Sidebar {...args} />
+const Template: StoryFn<typeof Sidebar> = (args) => (
+  <div className="tw-h-[96vh]">
+    <Sidebar {...args} />
+  </div>
+)
 
 export const Basic = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
@@ -30,7 +34,7 @@ FullExample.args = {
   imgTitle: "My Company",
   imgSrc:
     "https://placehold.jp/ffffff/0091cd/80x80.png?css=%7B%22border-radius%22%3A%225px%22%7D",
-  children: (
+  topComponents: (
     <>
       <SidebarEntry
         label="Star"
@@ -44,7 +48,7 @@ FullExample.args = {
       />
     </>
   ),
-  footer: (
+  bottomComponents: (
     <>
       <SidebarEntry label="Feedback" onClick={() => alert("Clicked!")} />
       <AppsMenu popoverTitle="Andere Apps" apps={appsList} />
