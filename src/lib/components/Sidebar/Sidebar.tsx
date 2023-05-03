@@ -1,16 +1,10 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { HTMLAttributes, ReactNode } from "react"
 
-type RGB = `rgb(${number}, ${number}, ${number})`
-type RGBA = `rgba(${number}, ${number}, ${number}, ${number})`
-type HEX = `#${string}`
-type Color = RGB | RGBA | HEX | undefined
-
 export type Props = HTMLAttributes<HTMLDivElement> & {
   imgSrc?: string
   imgTitle: string
   footer?: ReactNode
-  backgroundColor?: Color
 }
 
 function LogoImage(
@@ -31,13 +25,11 @@ export function Sidebar({
   imgTitle,
   children,
   footer,
-  backgroundColor,
   ...htmlProps
 }: Props) {
   return (
     <div
       className={`items-center tw-fixed tw-left-0 tw-top-0 tw-box-border tw-flex tw-h-full tw-w-[4.75rem] tw-flex-col tw-justify-between tw-bg-hermes-blue tw-p-2`}
-      style={{ backgroundColor }}
       {...htmlProps}
     >
       <div className="tw-flex tw-flex-col tw-gap-2">
