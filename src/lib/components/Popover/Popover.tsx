@@ -1,6 +1,7 @@
 import { Popover, Transition } from "@headlessui/react"
 import { Fragment, HTMLAttributes, ReactNode, useState } from "react"
 
+import clsx from "clsx"
 import { usePopper } from "react-popper"
 import SidebarButton, {
   SidebarButtonProps,
@@ -47,7 +48,10 @@ function MenuItem({ label, action, children, ...rest }: ItemProps) {
     <button
       key={label}
       onClick={action}
-      className="tw-relative tw-flex tw-h-9 tw-cursor-pointer tw-items-center tw-justify-between tw-border-none tw-bg-transparent tw-px-6 tw-text-start tw-font-sans tw-text-base tw-text-hermes-grey hover:tw-bg-hermes-blue-light"
+      className={clsx(
+        "tw-relative tw-flex tw-h-9 tw-cursor-pointer tw-items-center tw-justify-between tw-border-none",
+        " tw-bg-transparent tw-px-6 tw-text-start tw-font-sans tw-text-base tw-text-hermes-grey hover:tw-bg-hermes-blue-light"
+      )}
       {...rest}
     >
       <span>{label}</span>

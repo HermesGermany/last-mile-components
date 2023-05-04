@@ -1,12 +1,10 @@
-import { HTMLAttributes, MouseEventHandler } from "react"
+import { HTMLAttributes } from "react"
 
-import SidebarButton from "../../../components/SidebarButton"
+import SidebarButton, {
+  SidebarButtonProps,
+} from "../../../components/SidebarButton"
 
-export type Props = HTMLAttributes<HTMLButtonElement> & {
-  onClick: MouseEventHandler<HTMLButtonElement>
-  icon?: React.ReactNode
-  label?: string
-}
+export type Props = HTMLAttributes<HTMLButtonElement> & SidebarButtonProps
 
 export function SidebarEntry(props: Props) {
   return <SidebarButton {...props} />

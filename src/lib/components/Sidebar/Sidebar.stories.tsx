@@ -37,6 +37,7 @@ FullExample.args = {
   topComponents: (
     <>
       <SidebarEntry
+        active
         label="Star"
         icon={<StarIcon />}
         onClick={() => alert("Clicked!")}
