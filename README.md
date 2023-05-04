@@ -14,7 +14,7 @@ npm install last-mile-components
 
 To use a component in your app, import it from the library:
 
-```typescript
+```tsx
 import { BurgerMenu, Popover } from "last-mile-components"
 
 function MyComponent() {
@@ -37,7 +37,9 @@ function MyComponent() {
 
 ## Storybook documentation
 
-To view the components, you can launch Storybook:
+You can see the latest version of our documentation here: [LMC Docs](https://lmc-storybook.hermesgermany.digital/)
+
+To view the components locally, you can launch Storybook by following these steps:
 
 ```bash
 npm install
@@ -46,4 +48,4 @@ npm run dev
 
 ## License
 
-This library is licensed under the XYZ licence. See 'LICENSE' for more information.
+This library is licensed under the MIT licence. See 'LICENSE' for more information.
