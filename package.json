@@ -1,5 +1,5 @@
 {
-  "name": "last-mile-components",
+  "name": "@hermesgermany/last-mile-components",
   "private": true,
   "version": "0.0.1",
   "type": "module",
@@ -77,5 +77,16 @@
     "vite": "^4.2.0",
     "vite-plugin-dts": "^2.2.0",
     "vitest": "^0.29.8"
-  }
+  },
+  "description": "This is a library of reusable React components for building web apps for the last-mile.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HermesGermany/last-mile-components.git"
+  },
+  "author": "@hermesgermany",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HermesGermany/last-mile-components/issues"
+  },
+  "homepage": "https://github.com/HermesGermany/last-mile-components#readme"
 }
