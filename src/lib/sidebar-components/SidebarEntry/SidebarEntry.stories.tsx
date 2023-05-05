@@ -5,7 +5,7 @@ import SidebarEntry from "./SidebarEntry"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Design System/Components/SidebarEntry",
+  title: "Design System/Sidebar Components/SidebarEntry",
   component: SidebarEntry,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},

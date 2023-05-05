@@ -3,7 +3,7 @@ import BlueContainer from "../../../storybook-helper-components/BlueContainer"
 import Popover from "./Popover"
 
 export default {
-  title: "Design System/Components/Popover",
+  title: "Design System/Sidebar Components/Popover",
   component: Popover,
   argTypes: {},
 } as Meta<typeof Popover>

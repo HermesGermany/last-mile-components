@@ -10,7 +10,7 @@ import Sidebar from "./Sidebar"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Design System/Components/Sidebar",
+  title: "Design System/Sidebar Components/Sidebar",
   component: Sidebar,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},

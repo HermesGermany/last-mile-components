@@ -5,7 +5,7 @@ import AppsMenu from "./AppsMenu"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Design System/Components/AppsMenu",
+  title: "Design System/Sidebar Components/AppsMenu",
   component: AppsMenu,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},

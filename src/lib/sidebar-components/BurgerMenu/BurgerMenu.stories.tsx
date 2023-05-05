@@ -5,7 +5,7 @@ import BurgerMenu from "./BurgerMenu"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Design System/Components/BurgerMenu",
+  title: "Design System/Sidebar Components/BurgerMenu",
   component: BurgerMenu,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
