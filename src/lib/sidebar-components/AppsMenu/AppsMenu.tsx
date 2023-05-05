@@ -10,7 +10,7 @@ export type Props = HTMLAttributes<HTMLDivElement> & {
 export type LinkedApp = {
   label: string
   href: string
-  icon: any
+  icon?: string
 }
 
 function AppTile({ app }: { app: LinkedApp }) {
@@ -22,11 +22,13 @@ function AppTile({ app }: { app: LinkedApp }) {
       rel="noopener noreferrer"
       data-testid={`${app.label.replace(/ /g, "")}-testid`}
     >
-      <img
-        src={app.icon}
-        alt={`${app.label} Logo`}
-        className="tw-h-10 tw-w-auto"
-      />
+      {app.icon && (
+        <img
+          src={app.icon}
+          alt={`${app.label} Logo`}
+          className="tw-h-10 tw-w-auto"
+        />
+      )}
       <div className="tw-flex tw-w-full tw-flex-1 tw-items-center tw-justify-center">
         <span className="tw-overflow-hidden tw-text-ellipsis tw-text-center tw-text-xs tw-font-normal">
           {app.label}
