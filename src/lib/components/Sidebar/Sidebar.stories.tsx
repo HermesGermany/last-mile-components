@@ -33,7 +33,7 @@ FullExample.args = {
   title: "Logo",
   imgTitle: "My Company",
   imgSrc:
-    "https://placehold.jp/ffffff/0091cd/80x80.png?css=%7B%22border-radius%22%3A%225px%22%7D",
+    "https://placehold.jp/20/ffffff/0091cd/80x80.png?text=Logo&css=%7B%22border-radius%22%3A%225px%22%7D",
   topComponents: (
     <>
       <SidebarEntry
