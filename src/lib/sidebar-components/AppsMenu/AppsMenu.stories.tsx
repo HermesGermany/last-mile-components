@@ -8,7 +8,18 @@ export default {
   title: "Design System/Sidebar Components/AppsMenu",
   component: AppsMenu,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {},
+  argTypes: {
+    apps: {
+      description: `The apps that will be displayed in the popover
+      
+
+    LinkedApp: {
+      label: string
+      href: string
+      icon?: string
+    }`,
+    },
+  },
 } as Meta<typeof AppsMenu>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
