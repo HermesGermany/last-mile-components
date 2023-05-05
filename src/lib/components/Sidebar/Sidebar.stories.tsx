@@ -18,7 +18,7 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Sidebar> = (args) => (
-  <div className="tw-h-[96vh]">
+  <div className="tw-h-screen tw-max-h-[600px]">
     <Sidebar {...args} />
   </div>
 )
