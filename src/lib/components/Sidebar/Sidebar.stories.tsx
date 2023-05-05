@@ -53,7 +53,7 @@ FullExample.args = {
     <>
       <SidebarEntry label="Feedback" onClick={() => alert("Clicked!")} />
       <AppsMenu popoverTitle="Andere Apps" apps={appsList} />
-      <BurgerMenu>
+      <BurgerMenu buttonProps={{ showNotification: true }}>
         <Popover.MenuGroup groupLabel="Group 1">
           <Popover.MenuItem
             label="Menu item short 1"
@@ -66,6 +66,7 @@ FullExample.args = {
           <Popover.MenuItem
             label="Menu item with long text"
             action={() => alert("Clicked")}
+            showNotification
           />
           <Popover.MenuItem
             label="Menu item with very very long text"

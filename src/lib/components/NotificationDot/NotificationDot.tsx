@@ -2,8 +2,8 @@ import { HTMLAttributes } from "react"
 
 const positionStyles = {
   topRight: {
-    top: "-0.375rem",
-    right: "-0.375rem",
+    top: 2,
+    right: 2,
     bottom: "unset",
     left: "unset",
   },
@@ -61,7 +61,7 @@ export function NotificationDot(props: Props) {
 
   return (
     <div
-      className={`tw-absolute tw-h-3 tw-w-3 tw-rounded-full tw-drop-shadow`}
+      className={`tw-absolute tw-h-2.5 tw-w-2.5 tw-rounded-full tw-drop-shadow`}
       style={{ ...newPosition, backgroundColor: backgroundColor }}
       {...htmlProps}
     />

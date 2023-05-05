@@ -1,4 +1,5 @@
 import clsx from "clsx"
+import { NotificationDot } from "../lib"
 
 const JsxButton = (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => (
   <button {...props} />
@@ -11,6 +12,7 @@ export type SidebarButtonProps = {
   className?: string
   label?: string
   ButtonComponent?: React.FunctionComponent<any>
+  showNotification?: boolean
 }
 
 const SidebarButton = ({
@@ -20,11 +22,12 @@ const SidebarButton = ({
   className = "",
   label,
   ButtonComponent = JsxButton,
+  showNotification = false,
 }: SidebarButtonProps) => {
   return (
     <ButtonComponent
       className={clsx(
-        `tw-box-border tw-flex tw-w-full tw-cursor-pointer tw-flex-col tw-items-center tw-rounded tw-border-none`,
+        `tw-relative tw-box-border tw-flex tw-w-full tw-cursor-pointer tw-flex-col tw-items-center tw-rounded tw-border-none`,
         `tw-px-0 tw-py-1 tw-text-[10px] tw-font-bold tw-text-white tw-outline-none hover:tw-bg-white hover:tw-bg-opacity-10`,
         icon ? "tw-aspect-square" : "tw-py-3",
         icon && label ? "tw-justify-between" : "tw-justify-center",
@@ -41,6 +44,7 @@ const SidebarButton = ({
       {label && (
         <span className="tw-w-full tw-truncate tw-text-white">{label}</span>
       )}
+      {showNotification && <NotificationDot position="topRight" />}
     </ButtonComponent>
   )
 }

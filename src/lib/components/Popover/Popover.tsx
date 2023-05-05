@@ -1,11 +1,11 @@
 import { Popover, Transition } from "@headlessui/react"
-import { Fragment, HTMLAttributes, ReactNode, useState } from "react"
-
 import clsx from "clsx"
+import { Fragment, HTMLAttributes, ReactNode, useState } from "react"
 import { usePopper } from "react-popper"
 import SidebarButton, {
   SidebarButtonProps,
 } from "../../../components/SidebarButton"
+import { NotificationDot } from "../NotificationDot"
 import { Placement } from "./placementTypes"
 
 export type Props = HTMLAttributes<HTMLDivElement> & {
@@ -41,9 +41,16 @@ type ItemProps = {
   label: string
   action: () => void
   children?: React.ReactNode
+  showNotification?: boolean
 }
 
-function MenuItem({ label, action, children, ...rest }: ItemProps) {
+function MenuItem({
+  label,
+  action,
+  children,
+  showNotification = false,
+  ...rest
+}: ItemProps) {
   return (
     <button
       key={label}
@@ -55,6 +62,7 @@ function MenuItem({ label, action, children, ...rest }: ItemProps) {
       {...rest}
     >
       <span>{label}</span>
+      {showNotification && <NotificationDot position="leftForMenuItem" />}
       {children}
     </button>
   )
