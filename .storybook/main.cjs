@@ -27,4 +27,7 @@ module.exports = {
   features: {
     storyStoreV7: true,
   },
+  typescript: {
+    reactDocgen: "react-docgen",
+  },
 }

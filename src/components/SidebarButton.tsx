@@ -1,4 +1,5 @@
 import clsx from "clsx"
+import { ReactNode } from "react"
 import { NotificationDot } from "../lib"
 
 const JsxButton = (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => (
@@ -6,7 +7,7 @@ const JsxButton = (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => (
 )
 
 export type SidebarButtonProps = {
-  icon?: React.ReactNode
+  icon?: ReactNode
   active?: boolean
   onClick?: React.MouseEventHandler<HTMLButtonElement>
   className?: string
