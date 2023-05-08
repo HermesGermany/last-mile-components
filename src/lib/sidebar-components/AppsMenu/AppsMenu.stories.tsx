@@ -28,6 +28,14 @@ type LinkedApp = {
         },
       },
     },
+    buttonProps: {
+      description: "See SidebarEntry Docs",
+      table: {
+        type: {
+          summary: null,
+        },
+      },
+    },
   },
 } as Meta<typeof AppsMenu>
 
@@ -49,4 +57,5 @@ export const Basic = Template.bind({})
 Basic.args = {
   popoverTitle: "Hermes Apps",
   apps: appsList,
+  buttonProps: {},
 }
