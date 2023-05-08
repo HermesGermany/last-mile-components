@@ -11,8 +11,11 @@ export type SidebarButtonProps = {
   active?: boolean
   onClick?: React.MouseEventHandler<HTMLButtonElement>
   className?: string
+  /** Button's label */
   label?: string
+  /** You can customize the button component by providing the reference to a React component (not the JSX node) */
   ButtonComponent?: React.FunctionComponent<any>
+  /** Shows NotificationDot with position topRight if true */
   showNotification?: boolean
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
 
