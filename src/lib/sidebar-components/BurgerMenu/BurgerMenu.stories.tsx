@@ -30,7 +30,7 @@ export default {
 } as Meta<typeof BurgerMenu>
 
 const Template: StoryFn<typeof BurgerMenu> = (args) => (
-  <BlueContainer>
+  <BlueContainer additionalHeight>
     <div className="tw-w-14">
       <BurgerMenu {...args} />
     </div>
