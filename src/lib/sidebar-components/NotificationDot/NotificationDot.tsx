@@ -1,20 +1,34 @@
-import { HTMLAttributes } from "react"
+import * as React from "react"
 
-const positionStyles = {
-  topRight: {
+enum Position {
+  topRight = "topRight",
+  leftForMenuItem = "leftForMenuItem",
+  left = "left",
+}
+type PositionKeys = keyof typeof Position
+type PositionValues = {
+  top?: string | number | undefined
+  right?: string | number | undefined
+  bottom?: string | number | undefined
+  left?: string | number | undefined
+  margin?: string | undefined
+}
+
+const positionStyles: Record<Position, PositionValues> = {
+  [Position.topRight]: {
     top: 2,
     right: 2,
     bottom: "unset",
     left: "unset",
   },
-  leftForMenuItem: {
+  [Position.leftForMenuItem]: {
     top: 0,
     bottom: 0,
     left: 7,
     right: "unset",
     margin: "auto 0",
   },
-  left: {
+  [Position.left]: {
     top: 0,
     bottom: 0,
     left: "-0.5rem",
@@ -23,17 +37,13 @@ const positionStyles = {
   },
 }
 
-type BaseProps = {
-  backgroundColor?: string
-}
-
 type GivenPositionProps = {
-  position?: keyof typeof positionStyles
+  position?: PositionKeys
 }
 
 type CustomPositionProps = {
   position: "custom"
-  customPosition: {
+  customPosition?: {
     left?: number
     right?: number
     top?: number
@@ -41,16 +51,11 @@ type CustomPositionProps = {
   }
 }
 
-export type Props = HTMLAttributes<HTMLDivElement> &
-  BaseProps &
-  (GivenPositionProps | CustomPositionProps)
+export type Props = (GivenPositionProps | CustomPositionProps) &
+  React.HTMLAttributes<HTMLDivElement>
 
-export function NotificationDot(props: Props) {
-  const {
-    position = "topRight",
-    backgroundColor = "#ffa800",
-    ...htmlProps
-  } = props
+function NotificationDot(props: Props) {
+  const { position = Position.topRight, style, ...htmlProps } = props
   let newPosition
 
   if ("customPosition" in props) {
@@ -61,8 +66,8 @@ export function NotificationDot(props: Props) {
 
   return (
     <div
-      className={`tw-absolute tw-h-2.5 tw-w-2.5 tw-rounded-full tw-drop-shadow`}
-      style={{ ...newPosition, backgroundColor: backgroundColor }}
+      className={`tw-absolute tw-h-2.5 tw-w-2.5 tw-rounded-full tw-bg-hermes-orange-light tw-drop-shadow`}
+      style={{ ...newPosition, ...style }}
       {...htmlProps}
     />
   )
