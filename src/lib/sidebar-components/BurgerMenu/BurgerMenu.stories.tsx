@@ -10,18 +10,19 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     buttonProps: {
-      description:
-        "List of Apps that should be displayed in the Popover. It includes label, icon and hyperlink to the app.",
+      description: "See SidebarEntry Docs",
       table: {
         type: {
-          summary: "LinkedApp[]",
-          detail: `
-type LinkedApp = {
-  label: string
-  href: string
-  icon?: string
-}
-`,
+          summary: null,
+        },
+      },
+    },
+    children: {
+      description:
+        "If you'd like to use the suggested Group and Item layout, see Popover Docs",
+      table: {
+        type: {
+          summary: "ReactNode",
         },
       },
     },
