@@ -18,7 +18,7 @@ export type LinkedApp = {
 function AppTile({ app }: { app: LinkedApp }) {
   return (
     <a
-      className="tw-box-border tw-flex tw-h-28 tw-w-28 tw-cursor-pointer tw-flex-col tw-items-center tw-gap-3.5 tw-rounded tw-p-2.5 tw-text-hermes-grey tw-no-underline hover:tw-bg-hermes-grey-light hover:tw-text-hermes-blue"
+      className="tw-box-border tw-flex tw-h-28 tw-w-28 tw-cursor-pointer tw-flex-col tw-items-center tw-gap-3.5 tw-rounded tw-p-2.5 tw-text-hermes-grey tw-no-underline hover:tw-bg-hermes-grey-10 hover:tw-text-hermes-blue"
       target="_blank"
       href={app.href}
       rel="noopener noreferrer"
