@@ -13,16 +13,16 @@ export type SidebarButtonProps = {
   label?: string
   ButtonComponent?: React.FunctionComponent<any>
   showNotification?: boolean
-}
+} & React.ButtonHTMLAttributes<HTMLButtonElement>
 
 const SidebarButton = ({
   icon,
   active = false,
-  onClick,
   className = "",
   label,
   ButtonComponent = JsxButton,
   showNotification = false,
+  ...props
 }: SidebarButtonProps) => {
   return (
     <ButtonComponent
@@ -34,7 +34,7 @@ const SidebarButton = ({
         active ? "tw-bg-white/10" : "tw-bg-transparent",
         className
       )}
-      onClick={onClick}
+      {...props}
     >
       {icon && (
         <div className="tw-box-border tw-flex tw-aspect-square tw-h-fit tw-w-3/5 tw-items-center tw-justify-center">

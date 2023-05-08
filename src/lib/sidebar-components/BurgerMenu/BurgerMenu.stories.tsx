@@ -8,7 +8,24 @@ export default {
   title: "Design System/Sidebar Components/BurgerMenu",
   component: BurgerMenu,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {},
+  argTypes: {
+    buttonProps: {
+      description:
+        "List of Apps that should be displayed in the Popover. It includes label, icon and hyperlink to the app.",
+      table: {
+        type: {
+          summary: "LinkedApp[]",
+          detail: `
+type LinkedApp = {
+  label: string
+  href: string
+  icon?: string
+}
+`,
+        },
+      },
+    },
+  },
 } as Meta<typeof BurgerMenu>
 
 const Template: StoryFn<typeof BurgerMenu> = (args) => (
@@ -21,7 +38,9 @@ const Template: StoryFn<typeof BurgerMenu> = (args) => (
 
 export const Basic = Template.bind({})
 Basic.args = {
-  buttonProps: {},
+  buttonProps: {
+    title: "Basic Example",
+  },
   children: <div>Basic</div>,
 }
 

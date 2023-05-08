@@ -1,10 +1,12 @@
 import { HTMLAttributes } from "react"
+import { SidebarButtonProps } from "../../../components/SidebarButton"
 import { Popover } from "../Popover"
 import AppsIcon from "./AppsIcon"
 
 export type Props = HTMLAttributes<HTMLDivElement> & {
   apps: LinkedApp[]
   popoverTitle?: string
+  buttonProps?: SidebarButtonProps
 }
 
 export type LinkedApp = {
@@ -38,11 +40,13 @@ function AppTile({ app }: { app: LinkedApp }) {
   )
 }
 
-export function AppsMenu({ apps, popoverTitle, ...props }: Props) {
+export function AppsMenu({ apps, popoverTitle, buttonProps, ...props }: Props) {
   return (
     <Popover
       {...props}
-      button={<Popover.Button icon={<AppsIcon />} label="Apps" />}
+      button={
+        <Popover.Button icon={<AppsIcon />} label="Apps" {...buttonProps} />
+      }
       popoverTitle={popoverTitle}
     >
       <div className="tw-grid tw-grid-cols-2 tw-gap-x-6 tw-gap-y-4">
