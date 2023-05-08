@@ -62,7 +62,7 @@ function MenuItem({
       {...rest}
     >
       <span>{label}</span>
-      {showNotification && <NotificationDot position="leftForMenuItem" />}
+      {showNotification && <NotificationDot position="innerLeft" />}
       {children}
     </button>
   )

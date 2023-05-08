@@ -2,8 +2,7 @@ import * as React from "react"
 
 enum Position {
   topRight = "topRight",
-  leftForMenuItem = "leftForMenuItem",
-  left = "left",
+  innerLeft = "innerLeft",
 }
 type PositionKeys = keyof typeof Position
 type PositionValues = {
@@ -21,17 +20,10 @@ const positionStyles: Record<Position, PositionValues> = {
     bottom: "unset",
     left: "unset",
   },
-  [Position.leftForMenuItem]: {
+  [Position.innerLeft]: {
     top: 0,
     bottom: 0,
     left: 7,
-    right: "unset",
-    margin: "auto 0",
-  },
-  [Position.left]: {
-    top: 0,
-    bottom: 0,
-    left: "-0.5rem",
     right: "unset",
     margin: "auto 0",
   },

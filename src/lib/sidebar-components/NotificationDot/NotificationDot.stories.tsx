@@ -27,8 +27,5 @@ export const TopRight = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 TopRight.args = {}
 
-export const LeftForMenuItem = Template.bind({})
-LeftForMenuItem.args = { position: "leftForMenuItem" }
-
-export const Left = Template.bind({})
-Left.args = { position: "custom" }
+export const InnerLeft = Template.bind({})
+InnerLeft.args = { position: "innerLeft" }
