@@ -11,6 +11,7 @@ const JsxButton = (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => (
   <button {...props} />
 )
 
+type DataAttributeKey = `data-${string}`
 export type SidebarButtonProps = {
   icon?: ReactNode
   active?: boolean
@@ -22,6 +23,7 @@ export type SidebarButtonProps = {
   ButtonComponent?: FunctionComponent<any>
   /** Shows NotificationDot with position topRight if true */
   showNotification?: boolean
+  [dataAttribute: DataAttributeKey]: string
 } & ButtonHTMLAttributes<HTMLButtonElement>
 
 const SidebarButton = ({
