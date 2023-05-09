@@ -5,14 +5,32 @@ import BurgerMenu from "./BurgerMenu"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Design System/Components/BurgerMenu",
+  title: "Design System/Sidebar Components/BurgerMenu",
   component: BurgerMenu,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {},
+  argTypes: {
+    buttonProps: {
+      description: "See SidebarEntry Docs",
+      table: {
+        type: {
+          summary: null,
+        },
+      },
+    },
+    children: {
+      description:
+        "If you'd like to use the suggested Group and Item layout, see Popover Docs",
+      table: {
+        type: {
+          summary: "ReactNode",
+        },
+      },
+    },
+  },
 } as Meta<typeof BurgerMenu>
 
 const Template: StoryFn<typeof BurgerMenu> = (args) => (
-  <BlueContainer>
+  <BlueContainer additionalHeight>
     <div className="tw-w-14">
       <BurgerMenu {...args} />
     </div>
@@ -21,7 +39,9 @@ const Template: StoryFn<typeof BurgerMenu> = (args) => (
 
 export const Basic = Template.bind({})
 Basic.args = {
-  buttonProps: {},
+  buttonProps: {
+    title: "Basic Example",
+  },
   children: <div>Basic</div>,
 }
 

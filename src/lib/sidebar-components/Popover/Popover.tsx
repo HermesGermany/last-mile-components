@@ -1,5 +1,4 @@
 import { Popover, Transition } from "@headlessui/react"
-import clsx from "clsx"
 import { Fragment, HTMLAttributes, ReactNode, useState } from "react"
 import { usePopper } from "react-popper"
 import SidebarButton, {
@@ -8,20 +7,14 @@ import SidebarButton, {
 import { NotificationDot } from "../NotificationDot"
 import { Placement } from "./placementTypes"
 
-export type Props = HTMLAttributes<HTMLDivElement> & {
-  button: React.ReactNode
-  popoverTitle?: string
-  children: React.ReactNode
-  popoverPlacement?: Placement
+export type GroupProps = {
+  /** Label for the Menu Group */
+  groupLabel?: string
+  /** Ideally, MenuItem(s) should be used */
+  children: ReactNode
 }
 
-function MenuGroup({
-  groupLabel,
-  children,
-}: {
-  groupLabel?: string
-  children: ReactNode
-}) {
+function MenuGroup({ groupLabel, children }: GroupProps) {
   return (
     <div
       key={groupLabel}
@@ -39,14 +32,16 @@ function MenuGroup({
 
 type ItemProps = {
   label: string
-  action: () => void
-  children?: React.ReactNode
+  onClick: React.MouseEventHandler<HTMLButtonElement>
+  /** Additional content if just a label is not enough */
+  children?: ReactNode
+  /** Shows NotificationDot with position innerLeft if true */
   showNotification?: boolean
 }
 
 function MenuItem({
   label,
-  action,
+  onClick,
   children,
   showNotification = false,
   ...rest
@@ -54,18 +49,25 @@ function MenuItem({
   return (
     <button
       key={label}
-      onClick={action}
-      className={clsx(
-        "tw-relative tw-flex tw-h-9 tw-cursor-pointer tw-items-center tw-justify-between tw-border-none",
-        " tw-bg-transparent tw-px-6 tw-text-start tw-font-sans tw-text-base tw-text-hermes-grey hover:tw-bg-hermes-blue-light"
-      )}
+      onClick={onClick}
+      className="tw-relative tw-flex tw-h-9 tw-cursor-pointer tw-items-center tw-justify-between tw-border-none tw-bg-transparent tw-px-6 tw-text-start tw-font-sans tw-text-base tw-text-hermes-grey hover:tw-bg-hermes-grey-10"
       {...rest}
     >
-      <span>{label}</span>
-      {showNotification && <NotificationDot position="leftForMenuItem" />}
+      <span className="tw-truncate">{label}</span>
+      {showNotification && <NotificationDot position="innerLeft" />}
       {children}
     </button>
   )
+}
+
+export type Props = HTMLAttributes<HTMLDivElement> & {
+  /** The button component. When in doubt, use Popover.Button */
+  button: React.ReactNode
+  /** Title shown in the Popover */
+  popoverTitle?: string
+  /** The content to render. You can use any React node, but the preferred way is to use MenuGroup and MenuItem */
+  children: React.ReactNode
+  popoverPlacement?: Placement
 }
 
 export function CustomPopover({

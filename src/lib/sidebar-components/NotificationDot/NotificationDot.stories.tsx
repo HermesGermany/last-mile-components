@@ -4,10 +4,14 @@ import NotificationDot from "./NotificationDot"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Design System/Components/NotificationDot",
+  title: "Design System/Sidebar Components/NotificationDot",
   component: NotificationDot,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {},
+  argTypes: {
+    customPosition: {
+      if: { arg: "position", eq: "custom" },
+    },
+  },
 } as Meta<typeof NotificationDot>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
@@ -23,10 +27,5 @@ export const TopRight = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 TopRight.args = {}
 
-export const LeftForMenuItem = Template.bind({})
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-LeftForMenuItem.args = { position: "leftForMenuItem" }
-
-export const Left = Template.bind({})
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Left.args = { position: "left" }
+export const InnerLeft = Template.bind({})
+InnerLeft.args = { position: "innerLeft" }

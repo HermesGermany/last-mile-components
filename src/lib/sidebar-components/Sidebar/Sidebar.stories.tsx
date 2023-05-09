@@ -10,7 +10,7 @@ import Sidebar from "./Sidebar"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Design System/Components/Sidebar",
+  title: "Design System/Sidebar Components/Sidebar",
   component: Sidebar,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
@@ -18,7 +18,7 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Sidebar> = (args) => (
-  <div className="tw-h-[96vh]">
+  <div className="tw-h-screen tw-max-h-[600px]">
     <Sidebar {...args} />
   </div>
 )
@@ -57,32 +57,32 @@ FullExample.args = {
         <Popover.MenuGroup groupLabel="Group 1">
           <Popover.MenuItem
             label="Menu item short 1"
-            action={() => alert("Clicked")}
+            onClick={() => alert("Clicked")}
           />
           <Popover.MenuItem
             label="Menu item short 2"
-            action={() => alert("Clicked")}
+            onClick={() => alert("Clicked")}
           />
           <Popover.MenuItem
             label="Menu item with long text"
-            action={() => alert("Clicked")}
+            onClick={() => alert("Clicked")}
             showNotification
           />
           <Popover.MenuItem
             label="Menu item with very very long text"
-            action={() => alert("Clicked")}
+            onClick={() => alert("Clicked")}
           />
         </Popover.MenuGroup>
         <Popover.MenuGroup groupLabel="Group 2">
           <Popover.MenuItem
             label="Menu item short 3"
-            action={() => alert("Clicked")}
+            onClick={() => alert("Clicked")}
           />
         </Popover.MenuGroup>
         <Popover.MenuGroup groupLabel="Group 3">
           <Popover.MenuItem
             label="Menu item short 4"
-            action={() => alert("Clicked")}
+            onClick={() => alert("Clicked")}
           />
         </Popover.MenuGroup>
       </BurgerMenu>

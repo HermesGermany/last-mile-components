@@ -2,6 +2,7 @@ import "../src/lib/theme.css"
 import "./preview.css"
 
 export const parameters = {
+  layout: "fullscreen",
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {
@@ -9,4 +10,5 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  viewMode: "docs",
 }
