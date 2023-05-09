@@ -23,9 +23,8 @@ export type SidebarButtonProps = {
   ButtonComponent?: FunctionComponent<any>
   /** Shows NotificationDot with position topRight if true */
   showNotification?: boolean
-} & ButtonHTMLAttributes<HTMLButtonElement> & {
-    [dataAttribute: DataAttributeKey]: string
-  }
+  [dataAttribute: DataAttributeKey]: string
+} & ButtonHTMLAttributes<HTMLButtonElement>
 
 const SidebarButton = ({
   icon,
