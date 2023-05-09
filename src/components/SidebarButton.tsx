@@ -1,5 +1,10 @@
 import clsx from "clsx"
-import { ReactNode } from "react"
+import {
+  ButtonHTMLAttributes,
+  FunctionComponent,
+  MouseEventHandler,
+  ReactNode,
+} from "react"
 import { NotificationDot } from "../lib"
 
 const JsxButton = (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => (
@@ -9,15 +14,15 @@ const JsxButton = (props: React.ButtonHTMLAttributes<HTMLButtonElement>) => (
 export type SidebarButtonProps = {
   icon?: ReactNode
   active?: boolean
-  onClick?: React.MouseEventHandler<HTMLButtonElement>
+  onClick?: MouseEventHandler<HTMLButtonElement>
   className?: string
   /** Button's label */
   label?: string
   /** You can customize the button component by providing the reference to a React component (not the JSX node) */
-  ButtonComponent?: React.FunctionComponent<any>
+  ButtonComponent?: FunctionComponent<any>
   /** Shows NotificationDot with position topRight if true */
   showNotification?: boolean
-} & React.ButtonHTMLAttributes<HTMLButtonElement>
+} & ButtonHTMLAttributes<HTMLButtonElement>
 
 const SidebarButton = ({
   icon,

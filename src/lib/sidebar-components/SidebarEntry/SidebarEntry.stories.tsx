@@ -8,7 +8,16 @@ export default {
   title: "Design System/Sidebar Components/SidebarEntry",
   component: SidebarEntry,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {},
+  argTypes: {
+    onClick: {
+      description: "The onClick event handler.",
+      table: {
+        type: {
+          summary: "MouseEventHandler<HTMLButtonElement>",
+        },
+      },
+    },
+  },
 } as Meta<typeof SidebarEntry>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
