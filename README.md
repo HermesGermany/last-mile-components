@@ -15,7 +15,7 @@ npm install @hermesgermany/last-mile-components
 To use a component in your app, import it from the library:
 
 ```tsx
-import { BurgerMenu, Popover } from "last-mile-components"
+import { BurgerMenu, Popover } from "@hermesgermany/last-mile-components"
 
 function MyComponent() {
   return (
