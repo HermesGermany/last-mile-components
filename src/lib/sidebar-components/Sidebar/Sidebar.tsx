@@ -15,9 +15,10 @@ function LogoImage(
   >
 ) {
   return (
-    <div className="tw-p-1">
-      <img {...props} className="tw-h-full tw-w-full tw-object-scale-down" />
-    </div>
+    <img
+      {...props}
+      className="tw-box-border tw-h-full tw-w-full tw-object-scale-down tw-p-1"
+    />
   )
 }
 

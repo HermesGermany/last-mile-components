@@ -1,6 +1,6 @@
 {
   "name": "@hermesgermany/last-mile-components",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
   "main": "./dist/lmc.umd.js",
   "module": "./dist/lmc.es.js",
