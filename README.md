@@ -7,7 +7,7 @@ This is a library of reusable React components for building web apps for the las
 To install the library in your app, simply run:
 
 ```bash
-npm install last-mile-components
+npm install @hermesgermany/last-mile-components
 ```
 
 ## Usage
