@@ -9,7 +9,7 @@ export default {
   argTypes: {},
 } as Meta<typeof MenuGroup>
 
-const Template: StoryFn<typeof MenuGroup> = (args) => (
+const Template: StoryFn<typeof MenuGroup> = () => (
   <div className="tw-z-[500] tw-m-4 tw-box-border tw-flex tw-w-max tw-min-w-[14rem] tw-max-w-sm tw-flex-col tw-rounded tw-bg-white tw-p-6 tw-text-hermes-grey tw-shadow tw-drop-shadow">
     <Popover.MenuGroup groupLabel="Group #1">
       <Popover.MenuItem
