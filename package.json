@@ -12,6 +12,7 @@
     "build-storybook": "storybook build",
     "preview": "vite preview",
     "test": "vitest",
+    "test:ci": "vitest run",
     "generate": "plop",
     "lint": "eslint \"src/**/*.ts\" \"src/**/*.tsx\"",
     "format": "prettier --write"
