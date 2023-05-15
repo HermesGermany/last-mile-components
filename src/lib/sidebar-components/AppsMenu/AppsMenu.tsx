@@ -1,5 +1,6 @@
 import { HTMLAttributes } from "react"
 import { SidebarButtonProps } from "../../../components/SidebarButton"
+import { LinkedApp } from "../../types"
 import { Popover } from "../Popover"
 import AppsIcon from "./AppsIcon"
 
@@ -7,12 +8,6 @@ export type Props = HTMLAttributes<HTMLDivElement> & {
   apps: LinkedApp[]
   popoverTitle?: string
   buttonProps?: SidebarButtonProps
-}
-
-export type LinkedApp = {
-  label: string
-  href: string
-  icon?: string
 }
 
 function AppTile({ app }: { app: LinkedApp }) {
