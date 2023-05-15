@@ -1,5 +1,8 @@
 name: "Linting and testing code"
 on:
+  push:
+    branches-ignore:
+      - main
   pull_request:
     branches:
       - main
