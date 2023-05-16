@@ -48,10 +48,12 @@ export type Props = (GivenPositionProps | CustomPositionProps) &
 
 function NotificationDot(props: Props) {
   const { position = Position.topRight, style, ...htmlProps } = props
-  let newPosition
+  let newPosition: PositionValues = {}
 
-  if ("customPosition" in htmlProps) {
-    newPosition = htmlProps.customPosition
+  if (position === "custom" && "customPosition" in htmlProps) {
+    // TypeScript struggling hard with union types
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    newPosition = htmlProps.customPosition!
     delete htmlProps.customPosition
   } else if (position !== "custom") {
     newPosition = positionStyles[position]
