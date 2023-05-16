@@ -1,7 +1,7 @@
 name: "Linting and testing code"
 on:
-  pull_request:
-    branches:
+  push:
+    branches-ignore:
       - main
 permissions:
   contents: write
@@ -28,3 +28,8 @@ jobs:
 
       - name: Run tests
         run: npm run test:ci
+
+      - name: Snyk dependencies check
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
