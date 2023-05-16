@@ -50,8 +50,9 @@ function NotificationDot(props: Props) {
   const { position = Position.topRight, style, ...htmlProps } = props
   let newPosition
 
-  if ("customPosition" in props) {
-    newPosition = props.customPosition
+  if ("customPosition" in htmlProps) {
+    newPosition = htmlProps.customPosition
+    delete htmlProps.customPosition
   } else if (position !== "custom") {
     newPosition = positionStyles[position]
   }
