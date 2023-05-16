@@ -2,11 +2,19 @@
 import { HTMLAttributes, ReactNode } from "react"
 
 export type Props = HTMLAttributes<HTMLDivElement> & {
-  imgSrc?: string
-  imgTitle: string
   topComponents?: ReactNode
   bottomComponents?: ReactNode
-}
+} & ImageProps
+
+type ImageProps =
+  | {
+      imgSrc: string
+      imgTitle: string
+    }
+  | {
+      imgSrc?: never
+      imgTitle?: string
+    }
 
 function LogoImage(
   props: React.DetailedHTMLProps<
@@ -39,9 +47,11 @@ export function Sidebar({
           {imgSrc ? (
             <LogoImage src={imgSrc} title={imgTitle} alt={imgTitle} />
           ) : (
-            <span className="tw-overflow-hidden tw-text-ellipsis tw-text-center tw-font-semibold tw-text-white">
-              {imgTitle}
-            </span>
+            imgTitle && (
+              <span className="tw-overflow-hidden tw-text-ellipsis tw-text-center tw-font-semibold tw-text-white">
+                {imgTitle}
+              </span>
+            )
           )}
         </div>
         {topComponents}
