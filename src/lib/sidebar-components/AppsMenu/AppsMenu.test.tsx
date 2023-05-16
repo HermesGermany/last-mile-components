@@ -6,12 +6,12 @@ import * as stories from "./AppsMenu.stories"
 const { Basic } = composeStories(stories)
 const testId = "apps-menu"
 
-test("renders", () => {
+it("renders", () => {
   const { getByTestId } = render(<Basic data-testid={testId} apps={[]} />)
   expect(getByTestId(testId)).toBeDefined()
 })
 
-test("renders with data", async () => {
+it("renders with data", async () => {
   const { getByText } = render(<Basic />)
   act(() => {
     getByText("Apps").click()
@@ -22,7 +22,7 @@ test("renders with data", async () => {
   }
 })
 
-test("shows custom popover title", async () => {
+it("shows custom popover title", async () => {
   const customTitle = "The tales of foo and bar"
   const { getByText } = render(<Basic popoverTitle={customTitle} />)
 
@@ -32,7 +32,7 @@ test("shows custom popover title", async () => {
   expect(await screen.findByText(customTitle)).toBeDefined()
 })
 
-test("passes the button props along to the button", async () => {
+it("passes the button props along to the button", async () => {
   const { getByTestId } = render(
     <Basic
       buttonProps={{

@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react"
 import SidebarEntry from "./SidebarEntry"
 
-test("renders", () => {
+it("renders", () => {
   const { getByTestId } = render(
     <SidebarEntry
       data-testid="sidebar-entry"

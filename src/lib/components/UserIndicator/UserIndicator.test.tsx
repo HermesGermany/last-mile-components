@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react"
 import UserIndicator from "./UserIndicator"
 
-test("renders", () => {
+it("renders", () => {
   const { getByTestId } = render(<UserIndicator data-testid="user-indicator" />)
   expect(getByTestId("user-indicator")).toBeDefined()
 })
