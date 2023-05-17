@@ -14,7 +14,7 @@
     "test": "vitest",
     "test:ci": "vitest run",
     "generate": "plop",
-    "lint": "eslint \"src/**/*.ts\" \"src/**/*.tsx\"",
+    "lint": "eslint src/**/*.{ts,tsx}",
     "format": "prettier --write"
   },
   "exports": {
@@ -58,6 +58,7 @@
     "babel-loader": "8.3.0",
     "eslint": "8.37.0",
     "eslint-config-prettier": "8.8.0",
+    "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-a11y": "6.7.1",
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-promise": "6.1.1",
