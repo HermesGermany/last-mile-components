@@ -61,8 +61,8 @@ function MenuItem({
 }
 
 export type Props = HTMLAttributes<HTMLDivElement> & {
-  /** The button component. When in doubt, use Popover.Button */
-  button: React.ReactNode
+  /**  */
+  buttonProps: SidebarButtonProps
   /** Title shown in the Popover */
   popoverTitle?: string
   /** The content to render. You can use any React node, but the preferred way is to use MenuGroup and MenuItem */
@@ -70,15 +70,15 @@ export type Props = HTMLAttributes<HTMLDivElement> & {
   popoverPlacement?: Placement
 }
 
-export function CustomPopover({
-  button,
+function CustomPopover({
+  buttonProps,
   children,
   popoverPlacement = "right-end",
   popoverTitle,
   ...htmlProps
 }: Props) {
   const [referenceElement, setReferenceElement] =
-    useState<HTMLDivElement | null>(null)
+    useState<HTMLButtonElement | null>(null)
   const [popperElement, setPopperElement] = useState<HTMLDivElement | null>(
     null
   )
@@ -88,7 +88,13 @@ export function CustomPopover({
 
   return (
     <Popover {...htmlProps}>
-      <div ref={setReferenceElement}>{button}</div>
+      <div>
+        <SidebarButton
+          ButtonComponent={Popover.Button}
+          ref={setReferenceElement}
+          {...buttonProps}
+        />
+      </div>
       <Transition
         as={Fragment}
         enter="tw-transition tw-ease-out tw-duration-100"
@@ -118,8 +124,5 @@ export function CustomPopover({
 
 CustomPopover.MenuGroup = MenuGroup
 CustomPopover.MenuItem = MenuItem
-CustomPopover.Button = (props: SidebarButtonProps) => {
-  return <SidebarButton {...props} ButtonComponent={Popover.Button} />
-}
 
 export default CustomPopover

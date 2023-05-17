@@ -1,4 +1,4 @@
-function MenuIcon() {
+export default function MenuIcon() {
   return (
     <svg
       width="100%"
@@ -14,5 +14,3 @@ function MenuIcon() {
     </svg>
   )
 }
-
-export default MenuIcon

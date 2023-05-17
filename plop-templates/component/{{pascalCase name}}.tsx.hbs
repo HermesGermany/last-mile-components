@@ -4,8 +4,7 @@ export type Props = HTMLAttributes<HTMLDivElement> & {
   // Placeholder
 }
 
-function {{pascalCase name}}({ ...htmlProps }: Props) {
+export default function {{pascalCase name}}({ ...htmlProps }: Props) {
   return <div {...htmlProps}>{{pascalCase name}}</div>
 }
 
-export default {{pascalCase name}}
