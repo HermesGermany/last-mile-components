@@ -35,13 +35,20 @@ function AppTile({ app }: { app: LinkedApp }) {
   )
 }
 
-export function AppsMenu({ apps, popoverTitle, buttonProps, ...props }: Props) {
+export default function AppsMenu({
+  apps,
+  popoverTitle,
+  buttonProps,
+  ...props
+}: Props) {
   return (
     <Popover
       {...props}
-      button={
-        <Popover.Button icon={<AppsIcon />} label="Apps" {...buttonProps} />
-      }
+      buttonProps={{
+        icon: <AppsIcon />,
+        label: "Apps",
+        ...buttonProps,
+      }}
       popoverTitle={popoverTitle}
     >
       <div className="tw-grid tw-grid-cols-2 tw-gap-x-6 tw-gap-y-4">
@@ -52,5 +59,3 @@ export function AppsMenu({ apps, popoverTitle, buttonProps, ...props }: Props) {
     </Popover>
   )
 }
-
-export default AppsMenu

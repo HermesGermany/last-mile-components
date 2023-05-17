@@ -16,25 +16,27 @@ const Template: StoryFn<typeof Popover> = (args) => (
   </BlueContainer>
 )
 
+const { MenuGroup, MenuItem } = Popover
+
 const children = (
   <>
-    <Popover.MenuGroup groupLabel="Group 1">
-      <Popover.MenuItem label="Test" onClick={() => alert("Clicked")} />
-      <Popover.MenuItem label="Test" onClick={() => alert("Clicked")} />
-      <Popover.MenuItem label="Test" onClick={() => alert("Clicked")} />
-      <Popover.MenuItem label="Test" onClick={() => alert("Clicked")} />
-    </Popover.MenuGroup>
-    <Popover.MenuGroup groupLabel="Group 2">
-      <Popover.MenuItem label="Test" onClick={() => alert("Clicked")} />
-    </Popover.MenuGroup>
-    <Popover.MenuGroup groupLabel="Group 3">
-      <Popover.MenuItem label="Test" onClick={() => alert("Clicked")} />
-    </Popover.MenuGroup>
+    <MenuGroup groupLabel="Group 1">
+      <MenuItem label="Test" onClick={() => alert("Clicked")} />
+      <MenuItem label="Test" onClick={() => alert("Clicked")} />
+      <MenuItem label="Test" onClick={() => alert("Clicked")} />
+      <MenuItem label="Test" onClick={() => alert("Clicked")} />
+    </MenuGroup>
+    <MenuGroup groupLabel="Group 2">
+      <MenuItem label="Test" onClick={() => alert("Clicked")} />
+    </MenuGroup>
+    <MenuGroup groupLabel="Group 3">
+      <MenuItem label="Test" onClick={() => alert("Clicked")} />
+    </MenuGroup>
   </>
 )
 
 export const Basic = Template.bind({})
 Basic.args = {
-  button: <Popover.Button label="Click for popover" />,
+  buttonProps: { label: "Click for popover" },
   children,
 }

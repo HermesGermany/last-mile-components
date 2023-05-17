@@ -12,7 +12,7 @@ export function BurgerMenu({ children, buttonProps, ...htmlProps }: Props) {
   return (
     <Popover
       {...htmlProps}
-      button={<Popover.Button icon={<MenuIcon />} {...buttonProps} />}
+      buttonProps={{ icon: <MenuIcon />, ...buttonProps }}
     >
       {children}
     </Popover>
