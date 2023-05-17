@@ -1,6 +1,8 @@
 import clsx from "clsx"
 import {
   ButtonHTMLAttributes,
+  ForwardedRef,
+  forwardRef,
   FunctionComponent,
   MouseEventHandler,
   ReactNode,
@@ -26,15 +28,18 @@ export type SidebarButtonProps = {
   [dataAttribute: DataAttributeKey]: string
 } & ButtonHTMLAttributes<HTMLButtonElement>
 
-const SidebarButton = ({
-  icon,
-  active = false,
-  className = "",
-  label,
-  ButtonComponent = JsxButton,
-  showNotification = false,
-  ...props
-}: SidebarButtonProps) => {
+const SidebarButton = (
+  {
+    icon,
+    active = false,
+    className = "",
+    label,
+    ButtonComponent = JsxButton,
+    showNotification = false,
+    ...props
+  }: SidebarButtonProps,
+  buttonRef: ForwardedRef<HTMLButtonElement>
+) => {
   return (
     <ButtonComponent
       className={clsx(
@@ -46,6 +51,7 @@ const SidebarButton = ({
         className
       )}
       {...props}
+      ref={buttonRef}
     >
       {icon && (
         <div className="tw-box-border tw-flex tw-aspect-square tw-h-fit tw-w-3/5 tw-items-center tw-justify-center">
@@ -60,4 +66,4 @@ const SidebarButton = ({
   )
 }
 
-export default SidebarButton
+export default forwardRef(SidebarButton)
