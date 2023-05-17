@@ -6,8 +6,6 @@ import SidebarButton, {
 
 export type Props = HTMLAttributes<HTMLButtonElement> & SidebarButtonProps
 
-export function SidebarEntry(props: Props) {
+export default function SidebarEntry(props: Props) {
   return <SidebarButton {...props} />
 }
-
-export default SidebarEntry

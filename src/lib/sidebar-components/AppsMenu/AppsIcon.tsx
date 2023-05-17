@@ -1,4 +1,4 @@
-function AppsIcon() {
+export default function AppsIcon() {
   return (
     <svg
       width="100%"
@@ -14,5 +14,3 @@ function AppsIcon() {
     </svg>
   )
 }
-
-export default AppsIcon

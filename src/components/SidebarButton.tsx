@@ -28,7 +28,7 @@ export type SidebarButtonProps = {
   [dataAttribute: DataAttributeKey]: string
 } & ButtonHTMLAttributes<HTMLButtonElement>
 
-const SidebarButton = (
+export default forwardRef(function SidebarButton(
   {
     icon,
     active = false,
@@ -39,7 +39,7 @@ const SidebarButton = (
     ...props
   }: SidebarButtonProps,
   buttonRef: ForwardedRef<HTMLButtonElement>
-) => {
+) {
   return (
     <ButtonComponent
       className={clsx(
@@ -64,6 +64,4 @@ const SidebarButton = (
       {showNotification && <NotificationDot position="topRight" />}
     </ButtonComponent>
   )
-}
-
-export default forwardRef(SidebarButton)
+})

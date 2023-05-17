@@ -46,7 +46,7 @@ type CustomPositionProps = {
 export type Props = (GivenPositionProps | CustomPositionProps) &
   React.HTMLAttributes<HTMLDivElement>
 
-function NotificationDot(props: Props) {
+export default function NotificationDot(props: Props) {
   const { position = Position.topRight, style, ...htmlProps } = props
   let newPosition: PositionValues = {}
 
@@ -67,5 +67,3 @@ function NotificationDot(props: Props) {
     />
   )
 }
-
-export default NotificationDot

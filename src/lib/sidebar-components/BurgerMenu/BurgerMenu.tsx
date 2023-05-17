@@ -8,7 +8,11 @@ export type Props = HTMLAttributes<HTMLDivElement> & {
   buttonProps?: SidebarButtonProps
 }
 
-export function BurgerMenu({ children, buttonProps, ...htmlProps }: Props) {
+export default function BurgerMenu({
+  children,
+  buttonProps,
+  ...htmlProps
+}: Props) {
   return (
     <Popover
       {...htmlProps}
@@ -18,5 +22,3 @@ export function BurgerMenu({ children, buttonProps, ...htmlProps }: Props) {
     </Popover>
   )
 }
-
-export default BurgerMenu

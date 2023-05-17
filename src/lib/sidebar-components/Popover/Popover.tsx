@@ -70,7 +70,7 @@ export type Props = HTMLAttributes<HTMLDivElement> & {
   popoverPlacement?: Placement
 }
 
-export function CustomPopover({
+function CustomPopover({
   buttonProps,
   children,
   popoverPlacement = "right-end",

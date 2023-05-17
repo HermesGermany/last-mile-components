@@ -30,7 +30,7 @@ function LogoImage(
   )
 }
 
-export function Sidebar({
+export default function Sidebar({
   imgSrc,
   imgTitle,
   topComponents,
@@ -62,5 +62,3 @@ export function Sidebar({
     </div>
   )
 }
-
-export default Sidebar
