@@ -21,3 +21,8 @@
     border: solid 0 theme("borderColor.DEFAULT");
   }
 }
+
+@font-face {
+  font-family: "Marselis";
+  src: url("../fonts/MarselisOT.otf");
+}
