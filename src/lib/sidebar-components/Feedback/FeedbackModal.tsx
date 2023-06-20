@@ -164,7 +164,7 @@ function FeedbackModal({ onSubmitFunction, closePopup, ...rest }: Props) {
               placeholder={placeholderText}
             />
 
-            <div className="tw-my-3 tw-flex tw-flex-col tw-gap-1 tw-text-sm tw-text-hermes-grey">
+            <div className="tw-my-3 tw-flex tw-flex-col tw-gap-1 tw-text-sm tw-text-hermes-grey/75">
               <span>
                 Dein Name und deine E-Mail-Adresse werden der Nachricht
                 automatisch angehängt.
@@ -172,7 +172,10 @@ function FeedbackModal({ onSubmitFunction, closePopup, ...rest }: Props) {
               <span>
                 Wenn du uns Dateien schicken möchtest (z.B. Screenshots oder
                 Videos), kannst du uns nach wie vor{" "}
-                <a href="mailto:zsb-cockpit@hermesworld.com">
+                <a
+                  className="tw-text-hermes-blue"
+                  href="mailto:zsb-cockpit@hermesworld.com"
+                >
                   per E-Mail erreichen
                 </a>
                 .
@@ -184,12 +187,13 @@ function FeedbackModal({ onSubmitFunction, closePopup, ...rest }: Props) {
                 type="checkbox"
                 id="responseRequested-input"
                 name="responseRequested"
+                className="tw-cursor-pointer"
                 checked={feedbackContent.responseRequested}
                 onChange={toggleCheckbox}
               />
               <label
                 htmlFor="responseRequested-input"
-                style={{ userSelect: "none" }}
+                className="tw-cursor-pointer tw-select-none"
               >
                 Sollen wir uns bei dir melden?
               </label>
