@@ -10,6 +10,13 @@
   -webkit-text-size-adjust: 100%;
 }
 
+@layer base {
+  html {
+    font-family: Roboto, Segoe UI, Tahoma, Geneva, Verdana, Helvetica, Arial,
+      sans-serif;
+  }
+}
+
 /* tailwind base border styles without preflight  */
 @layer components {
   :where(
@@ -24,5 +31,5 @@
 
 @font-face {
   font-family: "Marselis";
-  src: url("../fonts/MarselisOT.otf");
+  src: url("/MarselisOT.otf");
 }
