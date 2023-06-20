@@ -19,10 +19,10 @@ export type FeedbackContent = {
 }
 
 export type Props = HTMLAttributes<HTMLButtonElement> & {
-  // Placeholder
+  onSubmit: (data: FeedbackContent) => Promise<boolean>
 }
 
-export default function Feedback({ ...htmlProps }: Props) {
+export default function Feedback({ onSubmit, ...htmlProps }: Props) {
   const [isOpen, setIsOpen] = useState(false)
 
   function togglePopup() {
@@ -34,7 +34,7 @@ export default function Feedback({ ...htmlProps }: Props) {
   }
 
   return (
-    <>
+    <div className="tw-font-sans">
       <SidebarButton
         label="Feedback"
         icon={<FeedbackIcon />}
@@ -46,11 +46,8 @@ export default function Feedback({ ...htmlProps }: Props) {
         Feedback
       </SidebarButton>
       {isOpen && (
-        <FeedbackModal
-          onSubmitFunction={() => Promise.resolve(true)}
-          closePopup={closePopup}
-        />
+        <FeedbackModal onSubmitFunction={onSubmit} closePopup={closePopup} />
       )}
-    </>
+    </div>
   )
 }
