@@ -152,6 +152,7 @@ function FeedbackModal({ onSubmitFunction, closePopup, ...rest }: Props) {
           >
             <div className="tw-font-marselis">Deine Nachricht</div>
             <textarea
+              data-testid="feedback-text"
               value={feedbackContent.emailContent}
               disabled={!feedbackContent.feedbackCategory}
               onChange={(e) =>
@@ -214,6 +215,7 @@ function FeedbackModal({ onSubmitFunction, closePopup, ...rest }: Props) {
 
             <div className="tw-flex tw-items-center tw-justify-end tw-gap-6">
               <button
+                data-testid="submit-button"
                 className="tw-flex tw-h-10 tw-w-32 tw-cursor-pointer tw-items-center tw-justify-evenly tw-rounded-sm tw-border-none tw-bg-hermes-blue tw-px-1.5 tw-py-2.5 tw-font-marselis tw-text-white tw-shadow-sm hover:tw-bg-hermes-blue-hover disabled:tw-cursor-default disabled:tw-bg-opacity-70"
                 disabled={submitDisabled}
                 onClick={handleSubmit}
@@ -235,15 +237,3 @@ function FeedbackModal({ onSubmitFunction, closePopup, ...rest }: Props) {
 }
 
 export default FeedbackModal
-
-// label {
-//   cursor: pointer;
-// }
-
-// button {
-//   //remove default button styles
-//   background: none;
-//   color: inherit;
-//   border: none;
-//   cursor: pointer;
-// }
