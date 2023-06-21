@@ -10,6 +10,13 @@
   -webkit-text-size-adjust: 100%;
 }
 
+@layer base {
+  html {
+    font-family: Roboto, Segoe UI, Tahoma, Geneva, Verdana, Helvetica, Arial,
+      sans-serif;
+  }
+}
+
 /* tailwind base border styles without preflight  */
 @layer components {
   :where(
@@ -20,4 +27,9 @@
     ) {
     border: solid 0 theme("borderColor.DEFAULT");
   }
+}
+
+@font-face {
+  font-family: "Marselis";
+  src: url("/MarselisOT.otf");
 }
