@@ -18,7 +18,7 @@ export type FeedbackContent = {
   responseRequested: boolean
 }
 
-export type Props = HTMLAttributes<HTMLButtonElement> & {
+export type Props = Omit<HTMLAttributes<HTMLButtonElement>, "onSubmit"> & {
   onSubmit: (data: FeedbackContent) => Promise<boolean>
 }
 
