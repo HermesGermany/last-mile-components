@@ -93,7 +93,7 @@ function FeedbackModal({ onSubmitFunction, closePopup, ...rest }: Props) {
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
-      className="tw-fixed tw-left-0 tw-top-0 tw-z-50 tw-h-full tw-w-full tw-cursor-pointer tw-bg-black tw-bg-opacity-50"
+      className="tw-fixed tw-left-0 tw-top-0 tw-z-[999] tw-h-full tw-w-full tw-cursor-pointer tw-bg-black tw-bg-opacity-50"
       onClick={onClosePopup}
       onKeyDown={onClosePopup}
     >
