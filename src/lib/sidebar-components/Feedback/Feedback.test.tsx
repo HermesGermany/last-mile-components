@@ -15,6 +15,14 @@ it("renders", () => {
 })
 
 it("calls the onSubmit function correctly", async () => {
+  window.ResizeObserver =
+    window.ResizeObserver ||
+    vitest.fn().mockImplementation(() => ({
+      disconnect: vitest.fn(),
+      observe: vitest.fn(),
+      unobserve: vitest.fn(),
+    }))
+
   let called = false
   const { getByTestId, findByTestId } = render(
     <Feedback
