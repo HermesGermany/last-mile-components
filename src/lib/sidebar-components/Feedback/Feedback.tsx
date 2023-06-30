@@ -45,9 +45,12 @@ export default function Feedback({ onSubmit, ...htmlProps }: Props) {
       >
         Feedback
       </SidebarButton>
-      {isOpen && (
-        <FeedbackModal onSubmitFunction={onSubmit} closePopup={closePopup} />
-      )}
+
+      <FeedbackModal
+        onSubmitFunction={onSubmit}
+        closePopup={closePopup}
+        isOpen={isOpen}
+      />
     </div>
   )
 }
