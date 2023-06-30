@@ -5,7 +5,7 @@ import SuccessIcon from "./SuccessIcon"
 
 type Props = {
   onSubmitFunction: (feedbackPayload: FeedbackContent) => Promise<boolean>
-  closePopup: () => void
+  closeModal: () => void
   setClosingTimeout: React.Dispatch<
     React.SetStateAction<ReturnType<typeof setTimeout> | undefined>
   >
@@ -15,7 +15,7 @@ type ResponseMessage = "none" | "success" | "error"
 
 export default function FeedbackModalBody({
   onSubmitFunction,
-  closePopup,
+  closeModal,
   setClosingTimeout,
 }: Props) {
   const [feedbackContent, setFeedbackContent] = useState<FeedbackContent>(
@@ -74,7 +74,7 @@ export default function FeedbackModalBody({
     sessionStorage.removeItem("feedbackContent")
 
     const timeoutId = setTimeout(() => {
-      closePopup()
+      closeModal()
     }, 1750)
     setClosingTimeout(timeoutId)
   }

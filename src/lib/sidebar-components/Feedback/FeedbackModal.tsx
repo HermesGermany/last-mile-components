@@ -6,13 +6,13 @@ import FeedbackModalHeader from "./FeedbackModalHeader"
 
 type Props = {
   onSubmitFunction: (feedbackPayload: FeedbackContent) => Promise<boolean>
-  closePopup: () => void
+  closeModal: () => void
   isOpen: boolean
 }
 
 function FeedbackModal({
   onSubmitFunction,
-  closePopup,
+  closeModal,
   isOpen,
   ...rest
 }: Props) {
@@ -20,9 +20,9 @@ function FeedbackModal({
     ReturnType<typeof setTimeout> | undefined
   >(undefined)
 
-  function onClosePopup() {
+  function onCloseModal() {
     clearTimeout(closingTimeout)
-    closePopup()
+    closeModal()
   }
 
   return (
@@ -30,7 +30,7 @@ function FeedbackModal({
       <Dialog
         as="div"
         className="tw-relative tw-z-[999]"
-        onClose={onClosePopup}
+        onClose={onCloseModal}
       >
         <Transition.Child
           as={Fragment}
@@ -57,13 +57,13 @@ function FeedbackModal({
               <Dialog.Panel
                 className="tw-box-border tw-flex tw-w-[33rem] tw-cursor-default tw-flex-col tw-gap-4 tw-rounded tw-bg-white tw-p-6 tw-text-gray-700 tw-shadow-md tw-drop-shadow"
                 {...rest}
-                data-testid="feedback-popup"
+                data-testid="feedback-modal"
               >
-                <FeedbackModalHeader onClosePopup={onClosePopup} />
+                <FeedbackModalHeader onCloseModal={onCloseModal} />
 
                 <FeedbackModalBody
                   onSubmitFunction={onSubmitFunction}
-                  closePopup={closePopup}
+                  closeModal={closeModal}
                   setClosingTimeout={setClosingTimeout}
                 />
               </Dialog.Panel>

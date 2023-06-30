@@ -2,9 +2,9 @@ import { Dialog } from "@headlessui/react"
 import CloseIcon from "./CloseIcon"
 import Icon from "./FeedbackIcon"
 
-type Props = { onClosePopup: () => void }
+type Props = { onCloseModal: () => void }
 
-export default function FeedbackModalHeader({ onClosePopup }: Props) {
+export default function FeedbackModalHeader({ onCloseModal }: Props) {
   return (
     <>
       <Dialog.Title
@@ -15,8 +15,8 @@ export default function FeedbackModalHeader({ onClosePopup }: Props) {
       </Dialog.Title>
       <button
         className="tw-absolute tw-right-4 tw-top-5 tw-cursor-pointer tw-border-none tw-bg-transparent tw-text-gray-400"
-        onClick={onClosePopup}
-        data-testid="lmc-feedback-modal-close-button"
+        onClick={onCloseModal}
+        data-testid="lmc-feedback-modal-close-btn"
       >
         <CloseIcon />
       </button>
