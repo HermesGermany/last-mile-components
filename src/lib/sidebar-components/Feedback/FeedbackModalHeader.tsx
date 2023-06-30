@@ -16,6 +16,7 @@ export default function FeedbackModalHeader({ onClosePopup }: Props) {
       <button
         className="tw-absolute tw-right-4 tw-top-5 tw-cursor-pointer tw-border-none tw-bg-transparent tw-text-gray-400"
         onClick={onClosePopup}
+        data-testid="lmc-feedback-modal-close-button"
       >
         <CloseIcon />
       </button>
