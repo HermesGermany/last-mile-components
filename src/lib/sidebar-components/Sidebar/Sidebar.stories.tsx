@@ -4,6 +4,7 @@ import SearchIcon from "../../../storybook-helper-components/assets/SearchIcon"
 import StarIcon from "../../../storybook-helper-components/assets/StarIcon"
 import { AppsMenu } from "../AppsMenu"
 import { BurgerMenu } from "../BurgerMenu"
+import { Feedback } from "../Feedback"
 import { Popover } from "../Popover"
 import { SidebarEntry } from "../SidebarEntry"
 import Sidebar from "./Sidebar"
@@ -51,7 +52,15 @@ FullExample.args = {
   ),
   bottomComponents: (
     <>
-      <SidebarEntry label="Feedback" onClick={() => alert("Clicked!")} />
+      <Feedback
+        onSubmit={() =>
+          new Promise((resolve) => {
+            setTimeout(() => {
+              resolve(true)
+            }, 1000)
+          })
+        }
+      />
       <AppsMenu popoverTitle="Andere Apps" apps={appsList} />
       <BurgerMenu buttonProps={{ showNotification: true }}>
         <Popover.MenuGroup groupLabel="Group 1">

@@ -25,11 +25,11 @@ export type Props = Omit<HTMLAttributes<HTMLButtonElement>, "onSubmit"> & {
 export default function Feedback({ onSubmit, ...htmlProps }: Props) {
   const [isOpen, setIsOpen] = useState(false)
 
-  function togglePopup() {
+  function toggleModal() {
     setIsOpen((openMenu) => !openMenu)
   }
 
-  function closePopup() {
+  function closeModal() {
     setIsOpen(false)
   }
 
@@ -41,14 +41,14 @@ export default function Feedback({ onSubmit, ...htmlProps }: Props) {
         data-userguide-id="feedback-button"
         data-testid="feedback-button"
         {...htmlProps}
-        onClick={togglePopup}
+        onClick={toggleModal}
       >
         Feedback
       </SidebarButton>
 
       <FeedbackModal
         onSubmitFunction={onSubmit}
-        closePopup={closePopup}
+        closeModal={closeModal}
         isOpen={isOpen}
       />
     </div>
