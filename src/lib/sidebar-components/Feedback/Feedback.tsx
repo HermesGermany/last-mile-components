@@ -54,11 +54,11 @@ export default function Feedback({
 }: Props) {
   const [isOpen, setIsOpen] = useState(false)
 
-  function togglePopup() {
+  function toggleModal() {
     setIsOpen((openMenu) => !openMenu)
   }
 
-  function closePopup() {
+  function closeModal() {
     setIsOpen(false)
   }
   return (
@@ -69,17 +69,17 @@ export default function Feedback({
         data-userguide-id="feedback-button"
         data-testid="feedback-button"
         {...htmlProps}
-        onClick={togglePopup}
+        onClick={toggleModal}
       >
         Feedback
       </SidebarButton>
-      {isOpen && (
-        <FeedbackModal
-          onSubmitFunction={onSubmit}
-          closePopup={closePopup}
-          defaultText={defaultText}
-        />
-      )}
+
+      <FeedbackModal
+        onSubmitFunction={onSubmit}
+        closeModal={closeModal}
+        isOpen={isOpen}
+        defaultText={defaultText}
+      />
     </div>
   )
 }

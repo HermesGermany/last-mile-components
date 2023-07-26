@@ -1,4 +1,4 @@
-import { fireEvent, render } from "@testing-library/react"
+import { act, fireEvent, render, waitFor } from "@testing-library/react"
 import Feedback, { feedbackCategories } from "./Feedback"
 
 it("renders", () => {
@@ -15,6 +15,14 @@ it("renders", () => {
 })
 
 it("calls the onSubmit function correctly", async () => {
+  window.ResizeObserver =
+    window.ResizeObserver ||
+    vitest.fn().mockImplementation(() => ({
+      disconnect: vitest.fn(),
+      observe: vitest.fn(),
+      unobserve: vitest.fn(),
+    }))
+
   let called = false
   const { getByTestId, findByTestId } = render(
     <Feedback
@@ -25,20 +33,26 @@ it("calls the onSubmit function correctly", async () => {
       }}
     />
   )
-  getByTestId("feedback").click()
+
+  act(() => getByTestId("feedback").click())
 
   const button = await findByTestId(
     `feedback-category-${feedbackCategories[0]}`
   )
-  button.click()
+  act(() => button.click())
 
   const inputField = await findByTestId("feedback-text")
-  fireEvent.change(inputField, {
-    target: { value: "some input" },
-  })
-  getByTestId(`submit-button`).click()
+  act(() =>
+    fireEvent.change(inputField, {
+      target: { value: "some input" },
+    })
+  )
 
-  expect(called).toBe(true)
+  act(() => getByTestId(`submit-button`).click())
+
+  await waitFor(() => {
+    expect(called).toBe(true)
+  })
 })
 
 it("makes use of custom defaultText values", async () => {

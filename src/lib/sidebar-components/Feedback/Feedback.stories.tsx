@@ -21,4 +21,20 @@ const Template: StoryFn<typeof Feedback> = (args) => (
 
 export const Basic = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Basic.args = {}
+Basic.args = {
+  onSubmit: getOnSubmitFunction(true),
+}
+
+export const Unsuccessful = Template.bind({})
+Unsuccessful.args = {
+  onSubmit: getOnSubmitFunction(false),
+}
+
+function getOnSubmitFunction(serverResponse: boolean): () => Promise<boolean> {
+  return (): Promise<boolean> =>
+    new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(serverResponse)
+      }, 1000)
+    })
+}
