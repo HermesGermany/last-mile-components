@@ -127,7 +127,7 @@ export default function FeedbackModalBody({
               key={feedbackCategory}
               feedbackCategory={feedbackCategory}
               feedbackContent={feedbackContent}
-              setFeedbackContent={setCategory}
+              setCategory={setCategory}
             />
           ))}
       </div>
