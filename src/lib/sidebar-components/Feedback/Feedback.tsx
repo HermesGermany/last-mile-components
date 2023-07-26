@@ -49,9 +49,10 @@ Zusätzliche Informationen (Sendungsnummer, genutzte Funktion, ...):
 
 export default function Feedback({
   onSubmit,
-  defaultText = defaultTextContents,
+  defaultText,
   ...htmlProps
 }: Props) {
+  const mergedDefaultText = Object.assign({}, defaultTextContents, defaultText)
   const [isOpen, setIsOpen] = useState(false)
 
   function toggleModal() {
@@ -78,7 +79,7 @@ export default function Feedback({
         onSubmitFunction={onSubmit}
         closeModal={closeModal}
         isOpen={isOpen}
-        defaultText={defaultText}
+        defaultText={mergedDefaultText}
       />
     </div>
   )
