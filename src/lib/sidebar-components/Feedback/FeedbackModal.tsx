@@ -1,56 +1,61 @@
 import { useEffect, useState } from "react"
 import CloseIcon from "./CloseIcon"
-import { feedbackCategories, FeedbackContent } from "./Feedback"
+import {
+  feedbackCategories,
+  FeedbackCategory,
+  FeedbackContent,
+} from "./Feedback"
 import FeedbackCategoryButton from "./FeedbackCategoryButton"
 import Icon from "./FeedbackIcon"
 import SuccessIcon from "./SuccessIcon"
-
+type ResponseType = "none" | "success" | "error"
 type Props = {
   onSubmitFunction: (feedbackPayload: FeedbackContent) => Promise<boolean>
   closePopup: () => void
+  defaultText: Partial<Record<Exclude<FeedbackCategory, undefined>, string>>
 }
 
-function FeedbackModal({ onSubmitFunction, closePopup, ...rest }: Props) {
+function getDefaultFeedbackContent() {
+  return () => {
+    const storedFeedbackContent = sessionStorage.getItem("feedbackContent")
+    return storedFeedbackContent !== null
+      ? (JSON.parse(storedFeedbackContent) as FeedbackContent)
+      : {
+          emailContent: "",
+          feedbackCategory: undefined,
+          responseRequested: false,
+        }
+  }
+}
+
+/**
+ * strips whitespaces and newlines
+ * @param text
+ * @returns
+ */
+function stripWhitespaces(text: string) {
+  return text.replaceAll(/(\s|\r\n|\n|\r)/g, "")
+}
+
+function FeedbackModal({
+  onSubmitFunction,
+  closePopup,
+  defaultText,
+  ...rest
+}: Props) {
   const [feedbackContent, setFeedbackContent] = useState<FeedbackContent>(
-    () => {
-      const storedFeedbackContent = sessionStorage.getItem("feedbackContent")
-      return storedFeedbackContent !== null
-        ? (JSON.parse(storedFeedbackContent) as FeedbackContent)
-        : {
-            emailContent: "",
-            feedbackCategory: undefined,
-            responseRequested: false,
-          }
-    }
+    getDefaultFeedbackContent()
   )
   const [isLoading, setIsLoading] = useState(false)
-  const [responseMessage, setResponseMessage] = useState<
-    "none" | "success" | "error"
-  >("none")
+  const [responseMessage, setResponseMessage] = useState<ResponseType>("none")
   const [closingTimeout, setClosingTimeout] = useState<
     ReturnType<typeof setTimeout> | undefined
   >(undefined)
 
-  let placeholderText = ""
-
-  switch (feedbackContent.feedbackCategory) {
-    case "Fehler":
-      placeholderText = "Welchen Fehler hast du gefunden?"
-      break
-    case "Frage":
-      placeholderText = "Welche Frage hast du an uns?"
-      break
-    case "Vorschlag":
-      placeholderText = "Welchen Vorschlag hast du für uns?"
-      break
-    default:
-      break
-  }
-
   function toggleCheckbox() {
-    setFeedbackContent((feedbackContent) => ({
-      ...feedbackContent,
-      responseRequested: !feedbackContent.responseRequested,
+    setFeedbackContent(({ responseRequested, ...content }) => ({
+      ...content,
+      responseRequested: !responseRequested,
     }))
   }
 
@@ -90,6 +95,32 @@ function FeedbackModal({ onSubmitFunction, closePopup, ...rest }: Props) {
     closePopup()
   }
 
+  function setCategory(category: Exclude<FeedbackCategory, undefined>) {
+    setFeedbackContent((prev) => {
+      if (!prev.feedbackCategory) {
+        // Initial click
+        return {
+          feedbackCategory: category,
+          emailContent: defaultText[category] ?? "",
+          responseRequested: false,
+        }
+      }
+      const contentIsEmptyOrContentIsInitialText =
+        prev.emailContent.length === 0 ||
+        stripWhitespaces(defaultText[prev.feedbackCategory] || "") ===
+          stripWhitespaces(prev.emailContent)
+      const newText = contentIsEmptyOrContentIsInitialText
+        ? defaultText[category]
+        : prev.emailContent
+      const newContent: FeedbackContent = {
+        ...prev,
+        feedbackCategory: category,
+        emailContent: newText ?? "",
+      }
+      return newContent
+    })
+  }
+
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
@@ -118,14 +149,18 @@ function FeedbackModal({ onSubmitFunction, closePopup, ...rest }: Props) {
         </div>
         <div className="tw-flex tw-w-full tw-flex-col">
           <div className="tw-flex tw-justify-between tw-gap-6">
-            {feedbackCategories.filter(Boolean).map((feedbackCategory) => (
-              <FeedbackCategoryButton
-                key={feedbackCategory}
-                feedbackCategory={feedbackCategory}
-                feedbackContent={feedbackContent}
-                setFeedbackContent={setFeedbackContent}
-              />
-            ))}
+            {feedbackCategories
+              .filter(
+                (cat): cat is Exclude<FeedbackCategory, undefined> => !!cat
+              )
+              .map((feedbackCategory) => (
+                <FeedbackCategoryButton
+                  key={feedbackCategory}
+                  feedbackCategory={feedbackCategory}
+                  feedbackContent={feedbackContent}
+                  setFeedbackContent={setCategory}
+                />
+              ))}
           </div>
           <div>
             {feedbackContent.feedbackCategory ? (
@@ -162,7 +197,6 @@ function FeedbackModal({ onSubmitFunction, closePopup, ...rest }: Props) {
                 }))
               }
               className="tw-z-10 tw-mt-1 tw-box-border tw-h-52 tw-w-full tw-resize-none tw-rounded tw-border tw-border-hermes-grey-50 tw-px-2 tw-py-1 tw-font-sans focus:tw-border-hermes-blue-light focus:tw-outline-none"
-              placeholder={placeholderText}
             />
 
             <div className="tw-my-3 tw-flex tw-flex-col tw-gap-1 tw-text-sm tw-text-hermes-grey/75">

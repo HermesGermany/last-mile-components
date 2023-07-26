@@ -20,9 +20,38 @@ export type FeedbackContent = {
 
 export type Props = Omit<HTMLAttributes<HTMLButtonElement>, "onSubmit"> & {
   onSubmit: (data: FeedbackContent) => Promise<boolean>
+  defaultText?: Partial<Record<Exclude<FeedbackCategory, undefined>, string>>
 }
 
-export default function Feedback({ onSubmit, ...htmlProps }: Props) {
+export const defaultTextContents: Record<
+  Exclude<FeedbackCategory, undefined>,
+  string
+> = {
+  Fehler: `Was war das erwartete Verhalten:
+
+
+Was war das tatsächliche Verhalten:
+
+
+Zusätzliche Informationen (Sendungsnummer, genutzte Funktion, ...):
+
+
+`,
+  Frage: `Welche Frage hast Du an uns:
+
+
+  `,
+  Vorschlag: `Welchen Vorschlag hast Du an uns:
+
+
+  `,
+}
+
+export default function Feedback({
+  onSubmit,
+  defaultText = defaultTextContents,
+  ...htmlProps
+}: Props) {
   const [isOpen, setIsOpen] = useState(false)
 
   function togglePopup() {
@@ -32,7 +61,6 @@ export default function Feedback({ onSubmit, ...htmlProps }: Props) {
   function closePopup() {
     setIsOpen(false)
   }
-
   return (
     <div className="tw-font-sans">
       <SidebarButton
@@ -46,7 +74,11 @@ export default function Feedback({ onSubmit, ...htmlProps }: Props) {
         Feedback
       </SidebarButton>
       {isOpen && (
-        <FeedbackModal onSubmitFunction={onSubmit} closePopup={closePopup} />
+        <FeedbackModal
+          onSubmitFunction={onSubmit}
+          closePopup={closePopup}
+          defaultText={defaultText}
+        />
       )}
     </div>
   )

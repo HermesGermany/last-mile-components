@@ -1,11 +1,10 @@
 import clsx from "clsx"
-import React from "react"
 import { FeedbackCategory, FeedbackContent } from "./Feedback"
 
 type Props = {
-  feedbackCategory: FeedbackCategory
+  feedbackCategory: Exclude<FeedbackCategory, undefined>
   feedbackContent: FeedbackContent
-  setFeedbackContent: (value: React.SetStateAction<FeedbackContent>) => void
+  setFeedbackContent: (value: Exclude<FeedbackCategory, undefined>) => void
 }
 
 export default function FeedbackCategoryButton({
@@ -24,12 +23,7 @@ export default function FeedbackCategoryButton({
           ? "tw-bg-hermes-blue tw-font-marselis tw-text-white"
           : "tw-bg-hermes-grey-5 tw-text-hermes-grey"
       )}
-      onClick={() =>
-        setFeedbackContent((feedbackContent) => ({
-          ...feedbackContent,
-          feedbackCategory,
-        }))
-      }
+      onClick={() => setFeedbackContent(feedbackCategory)}
     >
       {feedbackCategory}
     </button>

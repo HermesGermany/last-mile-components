@@ -40,3 +40,23 @@ it("calls the onSubmit function correctly", async () => {
 
   expect(called).toBe(true)
 })
+
+it("makes use of custom defaultText values", async () => {
+  const customText = "This text should be displayed when clicked on 'Fehler'"
+  const { getByTestId, findByTestId, findByText } = render(
+    <Feedback
+      data-testid="feedback"
+      onSubmit={() => {
+        return Promise.resolve(true)
+      }}
+      defaultText={{
+        Fehler: customText,
+      }}
+    />
+  )
+  getByTestId("feedback").click()
+  const button = await findByTestId(`feedback-category-Fehler`)
+  button.click()
+
+  expect(await findByText(customText)).toBeVisible()
+})
