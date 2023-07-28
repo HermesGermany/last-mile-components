@@ -3,17 +3,12 @@ import SidebarButton from "../../../components/SidebarButton"
 import FeedbackIcon from "./FeedbackIcon"
 import FeedbackModal from "./FeedbackModal"
 
-export const feedbackCategories = [
-  "Vorschlag",
-  "Fehler",
-  "Frage",
-  undefined,
-] as const
+export const feedbackCategories = ["Vorschlag", "Fehler", "Frage"] as const
 
 export type FeedbackCategory = (typeof feedbackCategories)[number]
 
 export type FeedbackContent = {
-  feedbackCategory: FeedbackCategory
+  feedbackCategory?: FeedbackCategory
   emailContent: string
   responseRequested: boolean
 }

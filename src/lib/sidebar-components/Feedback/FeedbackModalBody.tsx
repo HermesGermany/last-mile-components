@@ -17,10 +17,7 @@ type Props = {
 
 type ResponseMessage = "none" | "success" | "error"
 
-const placeholderMessages: Record<
-  Exclude<FeedbackCategory, undefined>,
-  string
-> = {
+const placeholderMessages: Record<FeedbackCategory, string> = {
   Fehler:
     "Was ist das erwartete Verhalten und was war das tatsächliche Verhalten? Wie lässt sich der Fehler nachstellen?",
   Frage: "Welche Frage hast du an uns?",
@@ -93,7 +90,7 @@ export default function FeedbackModalBody({
   return (
     <div className="tw-flex tw-w-full tw-flex-col">
       <div className="tw-flex tw-justify-between tw-gap-6">
-        {feedbackCategories.filter(Boolean).map((feedbackCategory) => (
+        {feedbackCategories.map((feedbackCategory) => (
           <FeedbackCategoryButton
             key={feedbackCategory}
             feedbackCategory={feedbackCategory}
