@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react"
-import { feedbackCategories, FeedbackContent } from "./Feedback"
+import {
+  feedbackCategories,
+  FeedbackCategory,
+  FeedbackContent,
+} from "./Feedback"
 import FeedbackCategoryButton from "./FeedbackCategoryButton"
 import SuccessIcon from "./SuccessIcon"
 
@@ -12,6 +16,17 @@ type Props = {
 }
 
 type ResponseMessage = "none" | "success" | "error"
+
+const placeholderMessages: Record<
+  Exclude<FeedbackCategory, undefined>,
+  string
+> = {
+  Fehler:
+    "Was ist das erwartete Verhalten und was war das tatsächliche Verhalten? Wie lässt sich der Fehler nachstellen?",
+  Frage: "Welche Frage hast du an uns?",
+  Vorschlag:
+    "Wie sieht dein Vorschlag aus und welches Problem wird dadurch gelöst?",
+}
 
 export default function FeedbackModalBody({
   onSubmitFunction,
@@ -34,21 +49,8 @@ export default function FeedbackModalBody({
   const [responseMessage, setResponseMessage] =
     useState<ResponseMessage>("none")
 
-  let placeholderText = ""
-
-  switch (feedbackContent.feedbackCategory) {
-    case "Fehler":
-      placeholderText = "Welchen Fehler hast du gefunden?"
-      break
-    case "Frage":
-      placeholderText = "Welche Frage hast du an uns?"
-      break
-    case "Vorschlag":
-      placeholderText = "Welchen Vorschlag hast du für uns?"
-      break
-    default:
-      break
-  }
+  const placeholderText =
+    placeholderMessages[feedbackContent.feedbackCategory || "Vorschlag"]
 
   const submitDisabled =
     !feedbackContent.emailContent || isLoading || responseMessage === "success"
