@@ -7,8 +7,18 @@ This is a library of reusable React components for building web apps for the las
 To install the library in your app, simply run:
 
 ```bash
+# npm
 npm install @hermesgermany/last-mile-components
+
+# yarn
+yarn add @hermesgermany/last-mile-components
 ```
+
+Afterwards, import the components styles either in your CSS 
+```css
+@import "@hermesgermany/last-mile-components/dist/style.css";
+```
+or in the root of your application by omitting the `@` in the import directive. You're good to go!
 
 ## Usage
 
@@ -37,7 +47,7 @@ function MyComponent() {
 
 ## Storybook documentation
 
-You can see the latest version of our documentation here: [LMC Docs](https://lmc-storybook.hermesgermany.digital/)
+You can see the latest version of our documentation here: <a href="https://lmc-storybook.hermesgermany.digital/" target="_blank">LMC Docs</a>
 
 To view the components locally, you can launch Storybook by following these steps:
 
