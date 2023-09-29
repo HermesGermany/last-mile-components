@@ -15,9 +15,14 @@ export type FeedbackContent = {
 
 export type Props = Omit<HTMLAttributes<HTMLButtonElement>, "onSubmit"> & {
   onSubmit: (data: FeedbackContent) => Promise<boolean>
+  fallbackEmailAddress?: string
 }
 
-export default function Feedback({ onSubmit, ...htmlProps }: Props) {
+export default function Feedback({
+  onSubmit,
+  fallbackEmailAddress,
+  ...htmlProps
+}: Props) {
   const [isOpen, setIsOpen] = useState(false)
 
   function toggleModal() {
@@ -45,6 +50,7 @@ export default function Feedback({ onSubmit, ...htmlProps }: Props) {
         onSubmitFunction={onSubmit}
         closeModal={closeModal}
         isOpen={isOpen}
+        fallbackEmailAddress={fallbackEmailAddress}
       />
     </div>
   )

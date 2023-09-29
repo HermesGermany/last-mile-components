@@ -13,6 +13,7 @@ type Props = {
   setClosingTimeout: React.Dispatch<
     React.SetStateAction<ReturnType<typeof setTimeout> | undefined>
   >
+  fallbackEmailAddress?: string
 }
 
 type ResponseMessage = "none" | "success" | "error"
@@ -29,6 +30,7 @@ export default function FeedbackModalBody({
   onSubmitFunction,
   closeModal,
   setClosingTimeout,
+  fallbackEmailAddress,
 }: Props) {
   const [feedbackContent, setFeedbackContent] = useState<FeedbackContent>(
     () => {
@@ -142,17 +144,19 @@ export default function FeedbackModalBody({
             Dein Name und deine E-Mail-Adresse werden der Nachricht automatisch
             angehängt.
           </span>
-          <span>
-            Wenn du uns Dateien schicken möchtest (z.B. Screenshots oder
-            Videos), kannst du uns nach wie vor{" "}
-            <a
-              className="tw-text-hermes-blue"
-              href="mailto:zsb-cockpit@hermesworld.com"
-            >
-              per E-Mail erreichen
-            </a>
-            .
-          </span>
+          {fallbackEmailAddress && (
+            <span>
+              Wenn du uns Dateien schicken möchtest (z.B. Screenshots oder
+              Videos), kannst du uns nach wie vor{" "}
+              <a
+                className="tw-text-hermes-blue"
+                href={`mailto:${fallbackEmailAddress}`}
+              >
+                per E-Mail erreichen
+              </a>
+              .
+            </span>
+          )}
         </div>
 
         <div className="pt-[1px] tw-mt-6 tw-flex tw-gap-1">

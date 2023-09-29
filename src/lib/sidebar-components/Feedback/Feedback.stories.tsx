@@ -23,6 +23,7 @@ export const Basic = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Basic.args = {
   onSubmit: getOnSubmitFunction(true),
+  fallbackEmailAddress: "support@example.com",
 }
 
 export const Unsuccessful = Template.bind({})

@@ -8,12 +8,14 @@ type Props = {
   onSubmitFunction: (feedbackPayload: FeedbackContent) => Promise<boolean>
   closeModal: () => void
   isOpen: boolean
+  fallbackEmailAddress?: string
 }
 
 function FeedbackModal({
   onSubmitFunction,
   closeModal,
   isOpen,
+  fallbackEmailAddress,
   ...rest
 }: Props) {
   const [closingTimeout, setClosingTimeout] = useState<
@@ -65,6 +67,7 @@ function FeedbackModal({
                   onSubmitFunction={onSubmitFunction}
                   closeModal={closeModal}
                   setClosingTimeout={setClosingTimeout}
+                  fallbackEmailAddress={fallbackEmailAddress}
                 />
               </Dialog.Panel>
             </Transition.Child>
