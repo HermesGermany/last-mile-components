@@ -44,10 +44,10 @@ export default forwardRef(function SidebarButton(
     <ButtonComponent
       className={clsx(
         `tw-relative tw-box-border tw-flex tw-w-full tw-cursor-pointer tw-flex-col tw-items-center tw-rounded tw-border-none`,
-        `tw-px-0 tw-py-1 tw-text-[10px] tw-font-bold tw-text-white tw-outline-none hover:tw-bg-white hover:tw-bg-opacity-10`,
+        `tw-px-0 tw-py-1 tw-text-[10px] tw-font-bold tw-text-white tw-outline-none hover:tw-bg-white/20 focus:tw-bg-white/20`,
         icon ? "tw-aspect-square" : "tw-py-3",
         icon && label ? "tw-justify-between" : "tw-justify-center",
-        active ? "tw-bg-white/10" : "tw-bg-transparent",
+        active ? "tw-bg-white/20" : "tw-bg-transparent",
         className
       )}
       {...props}
