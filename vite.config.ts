@@ -1,16 +1,14 @@
 import react from "@vitejs/plugin-react"
 import path from "node:path"
 import tailwindcss from "tailwindcss"
+import { defineConfig } from "vite"
 import dts from "vite-plugin-dts"
-import { defineConfig } from "vitest/config"
 import { dependencies, peerDependencies } from "./package.json"
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    react({
-      jsxRuntime: "classic",
-    }),
+    react(),
     dts({
       insertTypesEntry: true,
     }),
