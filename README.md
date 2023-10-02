@@ -14,10 +14,12 @@ npm install @hermesgermany/last-mile-components
 yarn add @hermesgermany/last-mile-components
 ```
 
-Afterwards, import the components styles either in your CSS 
+Afterwards, import the components styles either in your CSS
+
 ```css
 @import "@hermesgermany/last-mile-components/dist/style.css";
 ```
+
 or in the root of your application by omitting the `@` in the import directive. You're good to go!
 
 ## Usage
@@ -33,11 +35,11 @@ function MyComponent() {
       <Popover.MenuGroup groupLabel="Settings">
         <Popover.MenuItem
           label="User Settings"
-          action={() => console.log("dev settings")}
+          action={() => console.log("user settings")}
         />
         <Popover.MenuItem
           label="Dev Settings"
-          action={() => console.log("user settings")}
+          action={() => console.log("dev settings")}
         />
       </Popover.MenuGroup>
     </BurgerMenu>
