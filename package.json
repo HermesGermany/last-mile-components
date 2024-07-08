@@ -1,6 +1,6 @@
 {
   "name": "@hermesgermany/last-mile-components",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "type": "module",
   "main": "./dist/lmc.umd.js",
   "module": "./dist/lmc.es.js",
@@ -75,12 +75,6 @@
     "vite": "^4.5.3",
     "vite-plugin-dts": "3.6.0",
     "vitest": "0.34.6"
-  },
-  "overrides": {
-    "tailwindcss": {
-      "braces": ">3.0.3",
-      "micromatch": ">4.0.6"
-    }
   },
   "description": "This is a library of reusable React components for building web apps for the last-mile.",
   "repository": {
